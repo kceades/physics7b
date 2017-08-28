@@ -1,0 +1,222 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+	
+\title{Week 2, Meeting 1 Solutions}
+\author{GSI: Caleb Eades}
+\date{8/28}
+\maketitle
+
+\section{Dimensional Analysis}
+
+\subsection{Checking the answer, part 1}
+
+Yes you should be concerned, because $lg$ has units of Newtons (units of force), not Joules (units of energy).
+
+\subsection{Checking the answer, part 2}
+
+When solving of the force acting in the y-direction of a block falling down a ramp, I got $F_y=mgysin(\alpha) + \mu mgcos(y\alpha)$. What is everything wrong with this equation?
+
+\begin{itemize}
+	\item $mgy$ is units of energy or work (Joules), not of force (Newtons).
+	\item $\alpha$ must have units of radians based on the first term, so then in the second term, you cannot take a cosine of $y\alpha$ because that has units of meters.
+	\item It is just outright the wrong answer for force acting in the y-direction for a block falling down a ramp, but for the purposes here, we were concerned mostly with the units issues.
+\end{itemize}
+
+\subsection{Inferring units}
+
+Suppose we had an equation for a distance $D$ that relates to the acceleration $a$ and velocity $v$ by
+\begin{equation}
+D = \frac{5v}{3n^2} + \frac{a}{wv}e^{ha},
+\end{equation}
+where $n$, $w$ and $h$ are all constants. What can we infer about the units of these constants?
+
+From the first term, we can infer that $n$ has units of seconds to the negative one-half power, or $s^{-1/2}$. From the second term, the argument of the exponential must be unitless, so $h$ has units of inverse acceleration or $s^2 m^{-1}$. From the coefficient of the exponential, $w$ has units of $s^{-1}$.
+
+\newpage
+
+\section{Taylor Series}
+
+\subsection{Finding Maclaurin Series}
+
+\begin{equation}
+cos(x) = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - ...
+\end{equation}
+
+\begin{equation}
+e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + ...
+\end{equation}
+
+\begin{align*}
+(e^x)^2 &= e^{2x} \\
+&= 1 + (2x) + \frac{(2x)^2}{2!} + ... \\
+&= 1 + 2x + \frac{2^2x^2}{2!} + \frac{2^3x^3}{3!} + ...
+\end{align*}
+
+We cannot find a Maclaurin series for $ln(x)$ because the derivatives are not well defined at $x=0$.
+
+\subsection{Approximating using Taylor Series}
+
+\begin{align*}
+1/2.0001^2 &= (2.0001)^{-2} \\
+&= (2 + 0.0001)^{-2} \\
+&= 2^{-2}(1+0.00005)^{-2} \\
+&\approx \frac{1}{4}(1-0.0001) \\
+&= \frac{1}{4}(0.9999) \\
+&= 0.249975
+\end{align*}
+
+\subsection{Special relativity}
+
+For small v,
+\begin{equation}
+\gamma = (1-v^2/c^2)^{-1/2} \approx 1 + \frac{1}{2}\frac{v^2}{c^2}
+\end{equation}
+This is a second-order correction for momentum:
+\begin{equation}
+p \approx \left(1 + \frac{1}{2}\frac{v^2}{c^2}\right) mv \approx mv
+\end{equation}
+Whereas for energy $mc^2$ is a constant so we must keep the second-order correction. Ignoring the constant since we are primarily concerned with energy differences (we can define the 'zero' anywhere), we get:
+\begin{align*}
+E &\approx \left(1 + \frac{1}{2}\frac{v^2}{c^2}\right) mc^2 \\
+&= mc^2 + \frac{1}{2} mv^2 \\
+&\rightarrow \frac{1}{2} mv^2
+\end{align*}
+For a car traveling at 60 mph,
+\begin{align*}
+v &= 60 \frac{miles}{1 hr} \times \frac{1 hr}{3600 s} \times \frac{5280 ft}{1 mile} \times \frac{12 in}{1 ft} \times \frac{2.54 cm}{1 in} \times \frac{1 m}{100 cm} \\
+&\approx 26.82 \frac{m}{s}
+\end{align*}
+Then,
+\begin{align*}
+(p_{rel}-p_{cla})/p_{cla} &= \gamma - 1 \\
+&= \sqrt{\frac{1}{1-(26.82 m/s)^2/(3\times10^8 m/s)^2}} - 1 \\
+&\approx 4 \times 10^{-15}
+\end{align*}
+or more simply using the binomial approximation,
+\begin{equation}
+\gamma - 1 \approx 1 - \frac{v^2}{c^2} \approx 4 \times 10^{-15}
+\end{equation}
+Bonus thought: note that the binomial approximation is really accurate here. This is for two reasons, one being $v\ll c$ and the other being it is a second-order approximation in $\left(\frac{v}{c}\right)$, making it more precise than most first-order binomial approximations.
+
+\subsection{A harder approximation}
+
+\begin{align*}
+GM(R+h)^{-2} &= \frac{GM}{R^2}(1+h/R)^{-2} \\
+&= g(1 + (-2)(h/R) + (-2)(-3)(h/R)^2/(2!) + ...) \\
+&\approx g(1-2h/R)
+\end{align*}
+On top of Everest,
+\begin{equation}
+\frac{-2gh/R}{g} = -2(8.5/6400) \approx -0.003
+\end{equation}
+At the edge of the thermosphere,
+\begin{align*}
+\frac{GM}{(R+h)^2} &= \frac{(6.674\times10^{-11} m^3 kg^{-1} s^{-2})(5.972\times 10^{24} kg)}{(7000 \times 10^3 m)^2} \\
+&\approx 8.134 m s^{-2}
+\end{align*}
+A cone-percent interval means we are looking for something in the window $(0.99a,1.01a)=(8.053,8.215) m s^{-2}$. The Taylor Series approximations in successive orders are:
+\begin{align*}
+P_0 &= g \approx 9.731 m s^{-2} \\
+P_1 &= g(1-2h/R) \approx 7.906 m s^{-2} \\
+P_2 &= g(1-2h/R+3(h/R)^2) \approx 8.162 m s^{-2}
+\end{align*}
+Hence we only need a second-order Taylor series approximation to get within one percent (and it is significantly better than one percent at that).
+
+\newpage
+
+\section{Thermal Expansions}
+
+\subsection{Three Dimensions}
+
+The initial volume:
+\begin{equation}
+V_0 = L_0 H_0 W_0
+\end{equation}
+The volume after isotropic expansion:
+\begin{align*}
+V &= L_0(1+\alpha\Delta T)H_0(1 + \alpha\Delta T)W_0(1 + \alpha\Delta T) \\
+&= L_0H_0W_0(1+\alpha\Delta T)^3 \\
+&= V_0(1+3\alpha\Delta T + 3\alpha^2\Delta T^2 + \alpha^3\Delta T^3) \\
+&\approx V_0(1+3\alpha\Delta T)
+\end{align*}
+for small $\Delta T$. So then $\beta = 3\alpha$ is the volume expansion coefficient.
+
+Similarly, for anisotropic expansion,
+\begin{align*}
+V &= V_0(1+\alpha_L\Delta T)(1 + \alpha_{HW}\Delta T)^2 \\
+&= V_0(1+\alpha_L\Delta T)(1+2\alpha_{HW}\Delta T + \alpha^2_{HW}\Delta T^2) \\
+&= V_0(1+(\alpha_L + 2\alpha_{HW}\Delta T + ...) \\
+&\approx V_0(1+(\alpha_L + 2\alpha_{HW})\Delta T)
+\end{align*}
+for small $\Delta T$. So the volume expansion coefficient is $\beta = \alpha_L + 2\alpha_{HW}$.
+
+\subsection{Expanding/contracting holes}
+
+The hole gets larger! There are two ways to view this.
+
+View 1:
+
+Concentric thin circles are like lines. So a circle of radius $r$ and circumference $C=2\pi r$ will expand to $C=2\pi r(1+\alpha\Delta T)$. Every small circle gets bigger so the hole of the annulus grows larger!
+\begin{align*}
+a &= a_0(1+\alpha\Delta T) \\
+b - a &= (b_0-a_0)(1+\alpha\Delta T) \\
+\pi(b^2-a^2) &\approx \pi(b_0^2-a_0^2)(1+2\alpha\Delta T)
+\end{align*}
+
+View 2:
+
+Radial distance is just a length dimension that should expand linearly as $r=r_0(1+\alpha\Delta T)$. The other results follow.
+
+\subsection{Becoming an experimenter}
+
+Have fun!
+
+\newpage
+
+\section{Ideal Gas Law}
+
+\subsection{Pressured balloons}
+
+The lake adds a pressure $\rho gh$ where $h$ is the height beneath the surface. So letting $D$ bet the depth of the lake,
+\begin{align*}
+PV &= nRT \\
+P' &= nRT'/V' \\
+P_{balloon} + P_{depth} &= nRT'/V' \\
+nRT/V + \rho gh &= nRT'/V' \\
+\rho gh &= nR(T'/V'-T/V) \\
+h &= \frac{nR}{\rho g}(T'/V'-T/V) \\
+&= \frac{PV}{\rho gT}(T'/V'-T/V) \\
+&= \frac{P}{\rho g}\left(\frac{VT'}{TV'}-1\right)
+\end{align*}
+
+\subsection{Pressure gauges}
+
+Have fun!
+
+\subsection{Estimations with the ideal gas law}
+
+In a standard room, $P\approx 1 atm$, $T \approx 300 K$, $R\approx 8 J mol^{-1} K^{-1}$, $V\approx (5 m)^2(4 m) = 100 m^3$, and $1 atm\approx 10^5 N m^{-2}$. So putting all this together,
+\begin{equation}
+n = \frac{PV}{RT} \approx \frac{(10^5 N m^{-2})(100 m^3)}{(8 N m mol^{-1} K^{-1})(300 K)} \approx \frac{100}{25}\times 10^3 mol = 4000 moles
+\end{equation}
+Multiplying by Avogadro's number $\left(6.022\times10^{23}\right)$, we get
+\begin{equation}
+N\approx 2.5\times10^{26}
+\end{equation}
+
+\subsection{Partitioned boxes}
+
+\begin{itemize}
+	\item[(a)] The gas expands into the remainder of the box that used to be a vacuum. So $V/2\rightarrow V$ and by the Ideal Gas Law,
+	\begin{align*}
+	P_0\frac{V}{2}&=nRT_0 \\
+	P_fV &= nRT_f
+	\end{align*}
+	The termpreature remains unaltered, however, because nothing has been doen to increase or decrease the kinetic energy of the molecules, so $T_f=T_0$ and therefore by the two equations above, $P_f=P_0/2$.
+	\item[(b)] This is trickier because along the way, something has to hold the wall in place, which does negative work on the gas (you can also think about the gas doing work on the wall to expand and push it outwards), so the temperature no longer remains constant. Hence, $T$ decreases, $V$ increases ($V/2\rightarrow V$ as before) and $P$ decreases (by more than half now).
+\end{itemize}
+
+\end{document}

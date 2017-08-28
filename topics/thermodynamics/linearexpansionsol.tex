@@ -1,0 +1,59 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+	
+\title{Linear Expansion Solutions}
+\author{GSI: Caleb Eades}
+\date{8/28}
+\maketitle
+
+\section{Thermal Expansions}
+
+\subsection{Three Dimensions}
+
+The initial volume:
+\begin{equation}
+V_0 = L_0 H_0 W_0
+\end{equation}
+The volume after isotropic expansion:
+\begin{align*}
+V &= L_0(1+\alpha\Delta T)H_0(1 + \alpha\Delta T)W_0(1 + \alpha\Delta T) \\
+&= L_0H_0W_0(1+\alpha\Delta T)^3 \\
+&= V_0(1+3\alpha\Delta T + 3\alpha^2\Delta T^2 + \alpha^3\Delta T^3) \\
+&\approx V_0(1+3\alpha\Delta T)
+\end{align*}
+for small $\Delta T$. So then $\beta = 3\alpha$ is the volume expansion coefficient.
+
+Similarly, for anisotropic expansion,
+\begin{align*}
+V &= V_0(1+\alpha_L\Delta T)(1 + \alpha_{HW}\Delta T)^2 \\
+&= V_0(1+\alpha_L\Delta T)(1+2\alpha_{HW}\Delta T + \alpha^2_{HW}\Delta T^2) \\
+&= V_0(1+(\alpha_L + 2\alpha_{HW}\Delta T + ...) \\
+&\approx V_0(1+(\alpha_L + 2\alpha_{HW})\Delta T)
+\end{align*}
+for small $\Delta T$. So the volume expansion coefficient is $\beta = \alpha_L + 2\alpha_{HW}$.
+
+\subsection{Expanding/contracting holes}
+
+The hole gets larger! There are two ways to view this.
+
+View 1:
+
+Concentric thin circles are like lines. So a circle of radius $r$ and circumference $C=2\pi r$ will expand to $C=2\pi r(1+\alpha\Delta T)$. Every small circle gets bigger so the hole of the annulus grows larger!
+\begin{align*}
+a &= a_0(1+\alpha\Delta T) \\
+b - a &= (b_0-a_0)(1+\alpha\Delta T) \\
+\pi(b^2-a^2) &\approx \pi(b_0^2-a_0^2)(1+2\alpha\Delta T)
+\end{align*}
+
+View 2:
+
+Radial distance is just a length dimension that should expand linearly as $r=r_0(1+\alpha\Delta T)$. The other results follow.
+
+\subsection{Becoming an experimenter}
+
+Have fun!
+
+\end{document}

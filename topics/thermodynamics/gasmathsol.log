@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.27)  28 AUG 2017 10:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.27)  29 AUG 2017 20:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**w2d1sol.tex
-(./w2d1sol.tex
+**gasmathsol.tex
+(./gasmathsol.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -80,8 +80,9 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 \mathdisplay@stack=\toks18
 LaTeX Info: Redefining \[ on input line 2735.
 LaTeX Info: Redefining \] on input line 2736.
-) (./w2d1sol.aux)
-\openout1 = `w2d1sol.aux'.
+)
+No file gasmathsol.aux.
+\openout1 = `gasmathsol.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
@@ -95,48 +96,39 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 23.
+[1
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 23.
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
-Overfull \hbox (5.80574pt too wide) in paragraph at lines 201--202
-\OT1/cmr/m/n/10 In a stan-dard room, $\OML/cmm/m/it/10 P \OMS/cmsy/m/n/10 ^^Y \
-OT1/cmr/m/n/10 1\OML/cmm/m/it/10 atm$\OT1/cmr/m/n/10 , $\OML/cmm/m/it/10 T \OMS
-/cmsy/m/n/10 ^^Y \OT1/cmr/m/n/10 300\OML/cmm/m/it/10 K$\OT1/cmr/m/n/10 , $\OML/
-cmm/m/it/10 R \OMS/cmsy/m/n/10 ^^Y \OT1/cmr/m/n/10 8\OML/cmm/m/it/10 Jmol[]K[]$
-\OT1/cmr/m/n/10 , $\OML/cmm/m/it/10 V \OMS/cmsy/m/n/10 ^^Y \OT1/cmr/m/n/10 (5\O
-ML/cmm/m/it/10 m\OT1/cmr/m/n/10 )[](4\OML/cmm/m/it/10 m\OT1/cmr/m/n/10 ) =
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Overfull \hbox (5.19147pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/10 As $\OML/cmm/m/it/10 N$ \OT1/cmr/m/n/10 in-creases (keep-ing $\
+OML/cmm/m/it/10 T$ \OT1/cmr/m/n/10 con-stant), the dis-tri-bu-tion just gets ve
+r-ti-cally stretched
  []
 
-[6] [7] (./w2d1sol.aux) ) 
+[3] [4] (./gasmathsol.aux) ) 
 Here is how much of TeX's memory you used:
- 858 strings out of 494910
- 9633 string characters out of 6179836
- 64921 words of memory out of 5000000
- 4204 multiletter control sequences out of 15000+600000
+ 839 strings out of 494910
+ 9338 string characters out of 6179836
+ 66921 words of memory out of 5000000
+ 4190 multiletter control sequences out of 15000+600000
  8715 words of font info for 32 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 27i,10n,20p,389b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on w2d1sol.pdf (7 pages, 131819 bytes).
+ 27i,10n,20p,393b,197s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb>
+Output written on gasmathsol.pdf (4 pages, 124434 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 61 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

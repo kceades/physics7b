@@ -1,0 +1,105 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+	
+\title{Probability Distributions and Gases}
+\author{GSI: Caleb Eades}
+\maketitle
+
+\section{Probability Distributions}
+
+\subsection{Statistics on distributions}
+
+\begin{itemize}
+	\item[(a)] We simply integrate the distribution over all possible values of $v$ and enforce that it must equal one (to be a valid probability distribution):
+	\begin{equation}
+	\int_{-\sqrt{a/b}}^{\sqrt{a/b}}f(v)dv = 1 \implies \left[ Cav - \frac{Cb}{3}v^3\right|_{-\sqrt{a/b}}^{\sqrt{a/b}} = 1
+	\end{equation}
+	Plugging in the numbers, we have
+	\begin{align*}
+	Ca(2\sqrt{a/b})-\frac{Cb}{3}\frac{a}{b}(2\sqrt{a/b}) &= 1 \\
+	C &= \frac{3}{4a}\sqrt{\frac{b}{a}}
+	\end{align*}
+	\item[(b)] To compute average velocity, we integrate the distribution weighted by the velocity over the full range, using the value for $C$ that we cound in part (a):
+	\begin{align*}
+	\bar{v} &= \int_{-\sqrt{a/b}}^{\sqrt{a/b}}vf(v)dv \\
+	&= \int_{-\sqrt{a/b}}^{\sqrt{a/b}}(Cav-Cbv^3)dv \\
+	&= \left[ \frac{Ca}{2}v^2 - \frac{Cb}{4}v^4\right|_{-\sqrt{a/b}}^{\sqrt{a/b}} \\
+	&= \frac{Ca}{2}\left(\frac{a}{b}-\frac{a}{b}\right) - \frac{Cb}{4}\left(\left(\frac{a}{b}\right)^2-\left(\frac{a}{b}\right)^2\right) \\
+	&= 0
+	\end{align*}
+	Equivalently, we could have immediately concluded $\bar{v} = 0$ m/s by simply saying integrating an odd function over a domain symmetric about the origin always yields zero.
+	\item[(c)] We proceed exactly as in part (b), except with $v^2$ as our weight on the probability distribution:
+	\begin{align*}
+	\bar{v^2} &= \int_{-\sqrt{a/b}}^{\sqrt{a/b}}v^2f(v)dv \\
+	&= \int_{-\sqrt{a/b}}^{\sqrt{a/b}}(Cav^2-Cbv^4)dv \\
+	&= \left[ \frac{Ca}{3}v^3 - \frac{Cb}{5}v^5\right|_{-\sqrt{a/b}}^{\sqrt{a/b}} \\
+	&= C\left[\frac{a}{3}\sqrt{\frac{a}{b}}\frac{2a}{b}-\frac{b}{5}\sqrt{\frac{a}{b}}\frac{2a^2}{b^2}\right] \\
+	&= \left(\frac{3}{4a}\sqrt{\frac{b}{a}}\right)\left(\frac{2a^2}{b}\sqrt{\frac{a}{b}}\right)\left(\frac{1}{3}-\frac{1}{5}\right) \\
+	&= \frac{3a}{2b}\frac{2}{15} \\
+	&= \frac{a}{5b}
+	\end{align*}
+	\item[(d)] Quite simply, the number distribution is the probability distribution of the velocities multiplied by the number of particles:
+	\begin{equation}
+	N(v) = Nf(v)
+	\end{equation}
+\end{itemize}
+
+\subsection{Concrete numbers}
+
+\begin{itemize}
+	\item[(a)] Proceeding formulaicly:
+	\begin{align*}
+	\bar{v} &= \frac{2*10 + 4*12 + 2*14 + 1*15 + 1*17}{10} \\
+	&= 12.8 m/s \\
+	\sqrt{\bar{v^2}} &= \sqrt{\frac{2*10^2 + 4*12^2 + 2*14^2 + 1*15^2 + 1*17^2}{10}} \\
+	&= 12.96 m/s \\
+	&\approx 13.0 m/s
+	\end{align*}
+	\item[(b)] The average kinetic energy is related to both temperature and the average squared speed velocity via
+	\begin{align*}
+	\bar{K} &= \frac{1}{2}m\bar{v^2} = \frac{3}{2}k_B T \\
+	T &= \frac{1}{3}\frac{m}{k_B}\bar{v^2} \\
+	&\approx \frac{13^2}{3}\frac{m}{k_B}\times\frac{m^2}{s^2}
+	\end{align*}
+	Note that I explicitly keep the units of $m^2 s^{-2}$ since otherwise they would be lost with the $13^2$ being put into $\bar{v^2}$.
+\end{itemize}
+
+\subsection{Setting up expressions}
+
+\begin{itemize}
+	\item[(a)] Let $f(v)$ be the usual Maxwell distribution. Then,
+	\begin{equation}
+	0.1 = \left(\int_{\alpha}^{\infty} f(v)dv\right)/N
+	\end{equation}
+	\item[(b)] This is given by
+	\begin{equation}
+	p_E = \frac{\int_{\alpha}^{\infty} v^2f(v)dv}{\int_0^{\infty} v^2f(v)dv}
+	\end{equation}
+	\item[(c)] $N\rightarrow 0.9N$ and $E\rightarrow 0.72E$, so with $T_0 = \frac{2}{3k_B}\frac{E}{N}$ and $T_1 = \frac{2}{3k_B}\frac{0.72E}{0.9N}$, we have
+	\begin{align*}
+	T_1 &= \frac{0.72}{0.9}T_0 \\
+	&= \frac{8}{10}T_0
+	\end{align*}
+	\item[(d)] We want $\left(\frac{8}{10}\right)^n T_0 < \frac{1}{2}T_0$, where $n$ is the number of evaporative cooling cycles:
+	\begin{align*}
+	\left(\frac{8}{10}\right)^n &< \frac{1}{2} \\
+	n\log\left(\frac{8}{10}\right) &< \log\left(\frac{1}{2}\right) \\
+	-n\log\left(\frac{10}{8}\right) &< -\log(2) \\
+	n &> \log(2)/\log\left(\frac{10}{8}\right) \\
+	n &> 3.1
+	\end{align*}
+	Hence, we must go through at least four cycles.
+\end{itemize}
+
+\subsection{Puddles!}
+
+Puddles evaporate because the molecules move with a distribution of velocities and the ones with the top velocities could have enough to escape the surface tension of the puddle and go into the atmosphere. In a sealed jar, the water cannot evaporate because those fast molecules that espace will ``bounce'' off the walls and go right back in.
+
+\subsection{Building intuition}
+
+As $N$ increases (keeping $T$ constant), the distribution just gets vertically stretched since it is a number distribution, so this really isn't terribly insightful. As $T$ increases (keeping $N$ constant), the distribution gets a smaller peak but the tail increases, so you get on average faster molecules as the tail with the high speed ones becomes more probable/populated.
+
+\end{document}

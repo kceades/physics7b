@@ -1,0 +1,5 @@
+week:Week 2
+
+days:1;2
+
+time:8/28-9/1

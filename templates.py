@@ -237,13 +237,14 @@ class weektemplate(object):
 
 
 class topictemplate(object):
-	def __init__(self,archtopic,topic,othertopics):
+	def __init__(self,archtopic,topic,othertopics,problems):
 		"""
 		Constructor for the topic template
 		"""
 		# creates all the 
 		self.archtopic = archtopic
 		self.topic = topic
+		self.problems = problems
 		self.othertopics = [x for x in othertopics if x!=self.topic]
 		self.root = '/home/kceades/Documents/teaching/physics7b/topics'
 		if not os.path.isdir(self.root):
@@ -318,17 +319,25 @@ class topictemplate(object):
 <div class='left'>
 
 <h3>Problems:</h3>
-
-<a href='""" + self.FlatLower(self.topic) + """.pdf'>""" + self.topic + """ (p)</a>
-
+		"""
+		for problem in self.problems:
+			self.data = self.data + \
+"""<a href='""" + self.FlatLower(problem) + """.pdf'>""" + problem + """ (p)</a>"""
+		
+		self.data = self.data + \
+		"""
 </div>
 
 <div class='right'>
 
 <h3>Solutions:</h3>
+		"""
+		for problem in self.problems:
+			self.data = self.data + \
+"""<a href='""" + self.FlatLower(problem) + """sol.pdf'>""" + problem + """ (s)</a>"""
 
-<a href='""" + self.FlatLower(self.topic) + """sol.pdf'>""" + self.topic + """ (s)</a>
-
+		self.data = self.data + \
+		"""
 </div>
 
 </div>
@@ -338,7 +347,7 @@ class topictemplate(object):
 		if self.othertopics!=[]:
 			self.data = self.data + \
 			"""
-<p class='ot'>Related topics under in """ + self.archtopic + """:</p>
+<p class='ot'>Related topics in """ + self.archtopic + """:</p>
 
 <div class='main'>
 			"""

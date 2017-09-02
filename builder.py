@@ -85,7 +85,7 @@ class topicparser(object):
 		Constructor for the parser object
 		"""
 		self.file = file
-		self.datadict = {'archtopic':None,'topic':None}
+		self.datadict = {'archtopic':None,'topic':None,'problems':None}
 
 		self.PopSections()
 
@@ -103,7 +103,11 @@ class topicparser(object):
 			data = cline[1]
 			if data[-1:]=='\n':
 				data = data[:-1]
-			self.datadict[name] = data
+			if name=='problems':
+				probs = data.split(';')
+				self.datadict['problems'] = probs
+			else:
+				self.datadict[name] = data
 		cfile.close()
 
 
@@ -137,7 +141,7 @@ class constructpages(object):
 			fdata = topicparser(file)
 			a = fdata.datadict
 			ftemp = templates.topictemplate(a['archtopic'],a['topic']\
-				,self.topics[a['archtopic']])
+				,self.topics[a['archtopic']],a['problems'])
 
 	def RunWeekFiles(self):
 		"""

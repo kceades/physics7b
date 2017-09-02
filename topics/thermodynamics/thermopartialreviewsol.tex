@@ -1,0 +1,181 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+	
+\title{Thermodynamics: Partial Review, Solutions}
+\author{GSI: Caleb Eades}
+\date{9/6}
+\maketitle
+
+\section{Review of Everything Thus Far}
+
+\subsection{2D Gas Laws}
+
+\begin{itemize}
+	\item[(a)] The particle with speed $v_x$ in the x-direction must travel $2L$ between collisions with the same wall, so
+	\begin{equation}
+	\Delta t = \frac{2L}{v_x}
+	\end{equation}
+	\item[(b)] For each collision, the momentum changes by
+	\begin{equation}
+	|\Delta p| = 2mv_x
+	\end{equation}
+	\item[(c)] With $N$ particles,
+	\begin{align*}
+	F_{total} &= NF_{one} \\
+	&= N\frac{|\Delta p|}{\Delta t} \\
+	&= N\frac{2mv_x}{2L/v_x} \\
+	&= N\frac{mv_x^2}{L}
+	\end{align*}
+	Then, the pressure is simply this force divided by distance, so $P = \frac{F_{total}}{L} = N\frac{mv_x^2}{L}$.
+	\item[(d)] Oberse that $v^2 = v_x^2 + v_y^2$, so since $<v_x^2> = <v_y^2>$, $<v^2> = 2<v_x^2>$. Hence,
+	\begin{align*}
+	E &= \frac{1}{2}m<v^2> \\
+	&= m<v_x^2> \\
+	&= m\frac{PL^2}{Nm} \\
+	&= \frac{L^2}{N}\frac{NkT}{L^2} \\
+	&= kT
+	\end{align*}
+	as we should expect since each degree of freedom gives $\frac{1}{2}kT$ to the overall energy.
+\end{itemize}
+
+\subsection{Thermometers}
+
+\begin{itemize}
+	\item[(1)] Water freezes at a fairly common temperature, so this thermometer would not measure anything below $0^o C$. Also, it becomes a gas beyond $100^o C$, so it would be useless there too.
+	\item[(2)] The measurement of temperature with liquid thermometers depends on linear thermal expansion, so if the liquid never changes, it would be impossible to measure the temperature this way with this liquid.
+\end{itemize}
+
+\subsection{Expansions}
+
+\begin{itemize}
+	\item[(a)] Neglecting the change in the volume of the tube, the change in volume of the inside of the thermometer depends on how much the glass bulb expands:
+	\begin{equation}
+	\Delta V_g = \beta_g V_0 (T-T_0)
+	\end{equation}
+	\item[(b)] Again neglecting the volume in the tube, the change in volume of the alcohol is quite similar in form:
+	\begin{equation}
+	\Delta V_{al} = \beta_{al} V_0 (T-T_0)
+	\end{equation}
+	\item[(c)] Since $\beta_{al}\gg \beta_g$, we neglect the change in volume of the glass thermometer itself. So all the additional alcohol volume will go up the tube. The tube has diameter $d_0$ and we neglected its volume change, so
+	\begin{align*}
+	\Delta V_{al} &= \pi\left(\frac{d}{2}\right)^2\Delta h \\
+	\Delta h = \frac{4}{\pi d^2} \beta_{al} V_0 (T-T_0)
+	\end{align*}
+	\item[(d)] Since the alcohol in the tube can no longer be ignored and it starts at some height $h_0$,
+	\begin{equation}
+	\Delta V_{al,tube} = \beta_{al}\pi\left(\frac{d}{2}\right)^2h_0(T-T_0)
+	\end{equation}
+	So the total volume change and change in height can now be related by
+	\begin{align*}
+	\Delta V_{total} &= \Delta V_{al,bulb} + \Delta V_{al,tube} = \pi\left(\frac{d}{2}\right)^2\Delta h \\
+	\implies \Delta h &= \frac{4}{\pi d^2}(\beta_{al} V_0(T-T_0) + \beta_{al}\frac{\pi d^2}{4} h_0(T-T_0)) \\
+	&= \beta_{al} (T-T_0)\left(\frac{4}{\pi d^2} V_0 + h_0\right)
+	\end{align*}
+\end{itemize}
+
+\subsection{Mean Free Path}
+
+Picking a molecule moving with speed $v$ in a gas of $N$ molecules in some volume $V$, this molecule will move a distance $v\Delta t$ in some time interval $\Delta t$. If any other molecule is in the cylinder mapped out by this path with radius $2r$ around our particle of radius $r$ (looking at their centers), then they will interact with the molcule of interest. Now, the volume of the cylinder is
+\begin{equation}
+V_{cylinder} = \pi (2r)^2v\Delta t = 4\pi r^2v\Delta t
+\end{equation}
+Then, the number of interacting molecules is found by ratios:
+\begin{equation}
+N_{interacting} = \frac{N}{V} V_{cylinder}
+\end{equation}
+The mean free path is the distance our particle traveled divided by the number of interactions:
+\begin{equation}
+L_{mfp} = \frac{v\Delta t}{\frac{N}{V} 4\pi r^2 v\Delta t} = \frac{V}{N 4\pi r^2}
+\end{equation}
+(Note $V$ on top is the volume of the container, not speed of the molecule.)
+
+\subsection{Comparing Gases}
+
+\begin{itemize}
+	\item[(a)] We are looking for the RMS speed, so we only need the translational degrees of freedom, so
+	\begin{align*}
+	\frac{1}{2}mv_{rms}^2 &= \frac{3}{2}kT \\
+	v_{rms} &= \sqrt{\frac{3kT}{m}}
+	\end{align*}
+	The containers have the same total mass $M$, so $m_aN_a = M$ and $m_bN_b = M$. By dividing these equations, we have ratios
+	\begin{align*}
+	\frac{m_a}{m_b} &= \frac{N_b}{N_a} \\
+	\frac{m_b}{m_a} &= \frac{N_a}{N_b} \\
+	\end{align*}
+	Hence, we can find the ratio fo the RMS speeds as
+	\begin{align*}
+	\frac{v_{rms}^a}{v_{rms}^b} &= \sqrt{\frac{3kT}{m_a}}/\sqrt{\frac{3kT}{m_b}} \\
+	&= \sqrt{\frac{m_b}{m_a}} \\
+	&= \sqrt{\frac{N_a}{N_b}}
+	\end{align*}
+	\item[(b)] The containers are identical with $V_a = V_b = V$, so with $T_a = T_b = T$, we can use the Ideal Gas Law to write
+	\begin{align*}
+	P_a V &= N_a k T \\
+	P_b V &= N_b k T \\
+	\implies \frac{P_a}{P_b} &= \frac{N_a}{N_b}
+	\end{align*}
+	\item[(c)] We can rewrite our answer to part (a) in the case that the temperatures are not the same:
+	\begin{equation}
+	\frac{v_{rms}^a}{v_{rms}^b} = \sqrt{N_a}{N_b}\sqrt{T_a}{T_b}
+	\end{equation}
+	So we need $T_a = T_b\frac{N_b}{N_a}$ in order for the RMS speeds to be equal. Noting $T_b = T$, the fraction should be
+	\begin{equation}
+	\frac{T_a}{T} = \frac{N_b}{N_a}
+	\end{equation}
+	So if we want the fractional change we subtract $1$ in the form of $\frac{T}{T}$ from both sides:
+	\begin{align*}
+	\frac{T_a}{T}-\frac{T}{T} &= \frac{N_b}{N_a}-1 \\
+	\frac{T_a-T}{T} &= \frac{N_b}{N_a}-1
+	\end{align*}
+\end{itemize}
+
+\subsection{Pistons and Oscillations}
+
+\begin{itemize}
+	\item[(A)] We want the gravitational force on the piston to balance with the pressure from the gas with $|F_{gas}| = |F_{gravity}|$. We know that $|F_{gravity}| = mg$. Now, from the Ideal Gas Law, $P_0 V_0 = nRT$ and assuming temperature does not change, $P_f V_f = nRT$, so we can take a ratio to get the ratio of the pressures with
+	\begin{align*}
+	P_f &= P_0\left(\frac{V_0}{V_f}\right) \\
+	&= P_0\frac{H}{h}
+	\end{align*}
+	Then,
+	\begin{equation}
+	F_{gas} = P_0\frac{H}{h}\pi R^2 - P_0\pi R^2
+	\end{equation}
+	Hence,
+	\begin{align*}
+	mg &= P_0 \pi R^2\left(\frac{H}{h} - 1\right) \\
+	\implies \frac{mg}{P_0 \pi R^2} &= \frac{H}{h} - 1 \\
+	\implies h &= \frac{H}{1+mg/P_0\pi R^2} \\
+	&= \frac{HP_0\pi R^2}{mg + P_0\pi R^2}
+	\end{align*}
+	\item[(B)] The extra pressure will be determined by comparing $P'V' = nRT$ to $P_{eq}V_{eq} = nRT$. Similar to in (a), we get
+	\begin{align*}
+	P' &= P_{eq}\frac{V_{eq}}{V'} \\
+	&= P_0\frac{H}{h_{eq}}\frac{h_{eq}}{h_{eq}+\Delta h}
+	\end{align*}
+	Then, looking at the force,
+	\begin{align*}
+	F &= (P' - P_{eq})\pi R^2 \\
+	&= P_{eq}\left(\frac{h_{eq}}{h_{eq}+\Delta h} - 1\right)\pi R^2 \\
+	&= P_{eq}\left(\left(1+\frac{\Delta h}{h_{eq}}\right)^{-1} - 1\right)\pi R^2 \\
+	&\approx P_0\frac{H}{h_{eq}}\left(1-\frac{\Delta h}{h_{eq}} - 1\right)\pi R^2 \\
+	&= P_0\frac{H}{h_{eq}}\pi R^2 \left(\frac{-\Delta h}{h_{eq}}\right)
+	\end{align*}
+	Note that $\Delta h = h - h_{eq}$, so we get
+	\begin{equation}
+	F = -P_0\frac{H}{h_{eq}^2} \pi R^2(h-h_{eq})
+	\end{equation}
+	This is a harmonic oscillator about $h_{eq}$, so the frequency of small oscillations is
+	\begin{align*}
+	\omega &= \sqrt{\frac{P_0\frac{H}{h_{eq}^2}\pi R^2}{m}} \\
+	&= \frac{R}{h_{eq}}\sqrt{\frac{\pi P_0 H}{m}} \\
+	&= \frac{R(mg + P_0 \pi R^2)}{4P_0 \pi R^2}\sqrt{\frac{\pi P_0 H}{m}} \\
+	&= \frac{mg + P_0\pi R^2}{R\sqrt{\pi P_0 H m}}
+	\end{align*}
+\end{itemize}
+
+\end{document}

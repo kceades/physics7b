@@ -115,16 +115,16 @@
 	\end{equation}
 	\item[(2)] Method 2 (from the Maxwell distribution): Using $f(v)$ from the Maxwell distribution and $<v^2> = \int_0^{\infty} v^2f(v)dv$, we have
 	\begin{equation}
-	<v^2> = \int_0^{\infty} Av^4\exp{-Bv^2} dv
+	<v^2> = \int_0^{\infty} Av^4 e^{-Bv^2} dv
 	\end{equation}
 	where $A = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2}$ and $B = \frac{1}{2}\frac{m}{kT}$. Observe that
 	\begin{equation}
-	v^4\exp{-Bv^2} = \frac{d^2}{dB^2}\left(\exp{-Bv^2}\right)
+	v^4 e^{-Bv^2} = \frac{d^2}{dB^2}\left(e^{-Bv^2}\right)
 	\end{equation}
 	So we can use this to rewrite (and using the formula for the integral of a Gaussian on the second step)
 	\begin{align*}
-	<v^2> &= A\{frac{d^2}{dB^2}\int_0^{\infty} \exp{-Bv^2}dv \\
-	&= A\{frac{d^2}{dB^2}\left(\frac{1}{2}\sqrt{\frac{\pi}{B}}\right) \\
+	<v^2> &= A \frac{d^2}{dB^2}\int_0^{\infty} e^{-Bv^2}dv \\
+	&= A\frac{d^2}{dB^2}\left(\frac{1}{2}\sqrt{\frac{\pi}{B}}\right) \\
 	&= \frac{1}{2}\sqrt{\pi}\frac{-1}{2}\frac{-3}{2}B^{-5/2} \\
 	&= \frac{3\sqrt{\pi}}{8}AB^{-5/2}
 	\end{align*}
@@ -136,7 +136,7 @@
 	\end{align*}
 	Hence,
 	\begin{equation}
-	<\frac{1}{2}mv^2 = \frac{3}{2}kT
+	<\frac{1}{2}mv^2> = \frac{3}{2}kT
 	\end{equation}
 \end{itemize}
 
@@ -190,7 +190,7 @@ Hence, the ratio of the vlume of a gas particle to the volume of the room is
 \begin{equation}
 \frac{V_{gas}}{V_{room}} \approx \frac{10^{-4}}{10^3} = 10^{-7}
 \end{equation}
-As we can see, the gas molecules take up less that one part per billion in volume. So the Ideal Gas Law is a decent approximation.
+As we can see, the gas molecules take up less that one part per million in volume. So the Ideal Gas Law is a decent approximation.
 
 \subsection{Reformulation of Pressure}
 

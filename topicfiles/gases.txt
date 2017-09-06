@@ -2,4 +2,4 @@ archtopic:thermodynamics
 
 topic:Gases
 
-problems:Gases;Non Ideal Gases
+problems:Gases;More Ideal Gases

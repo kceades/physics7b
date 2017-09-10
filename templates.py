@@ -49,9 +49,7 @@ class indextemplate(object):
 
 <body>
 
-<h1>Physics 7B Discussion File Repository</h1>
-
-<a href='index.html'><img src='images/home.png'></a>
+<h1>Physics 7B Discussion Repository</h1>
 
 <p>This site is for storing and accessing the various files distributed in Sections 301 and 303. Hopefully this will make things easier for you all rather than digging through old emails. The material is sorted two different ways, by week and by topic.</p>
 

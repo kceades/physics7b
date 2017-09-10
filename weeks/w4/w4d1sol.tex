@@ -1,0 +1,175 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+	
+\title{Week 4, Meeting 1 Solutions}
+\author{GSI: Caleb Eades}
+\date{9/11}
+\maketitle
+
+\section{Derivations/Proofs}
+
+\subsection{Relationship of Molar Specific Heats}
+
+The first law of thermodynamics says taht
+\begin{equation}
+\Delta E_{int} = Q-W
+\end{equation}
+where $W=\int PdV$. Heat is related to molar specific heats by $Q=nC_V\Delta T$ under constant volume or $Q=nC_P\Delta T$ under constant pressure. Then, increasing the temperature with constant volume,
+\begin{equation}
+\Delta E_{int} = nC_V\Delta T + 0
+\end{equation}
+whereas increasing the temperature with constant pressure,
+\begin{equation}
+\Delta E_{int} = nC_P\Delta T + P\Delta V
+\end{equation}
+Subtracting the first equation from teh second and noting that $\Delta E_{int} = \frac{d}{2}Nk_B\Delta T$ for both processes,
+\begin{equation}
+0 = nC_P\Delta T + P\Delta V - nC_V\Delta T
+\end{equation}
+Observe from the Ideal Gas Law that $P\Delta V = nR\Delta T$, so putting this in,
+\begin{align*}
+nC_V\Delta T &= nC_P\Delta T + nR\Delta T \\
+C_V &= C_P + R
+\end{align*}
+
+\subsection{Equipartition Theorem and Molar Specific Heats}
+
+As in the first problem, the equipartition theorem posits that
+\begin{equation}
+E_{int} = \frac{d}{2}Nk_B T = \frac{d}{2}nRT
+\end{equation}
+In as process of adding heat at constant volume,
+\begin{align*}
+\Delta E_{int} &= nC_V \Delta T \\
+\frac{d}{2}nR\Delta T &= nC_V\Delta T \\
+C_V &= \frac{d}{2}R
+\end{align*}
+
+\newpage
+
+\section{General Problems from Chapter 19}
+
+\subsection{Bullets and Blocks}
+
+The specific heat for lead is $130 J kg^{-1} C^{-1}$. Let $m = 2.0 g$, $M = 2.0 kg$, and $v_0 = 200 ms^{-1}$. Now, in the collision, momentum and angular momentum are conserved (which are equivalent expressions as it turns out), so
+\begin{align*}
+mv_0 &= (m+M)v_f \\
+v_f &= \frac{m}{m+M}v_0
+\end{align*}
+The difference in kinetic energies will be equal to the heat generated since there is no outside work:
+\begin{align*}
+\Delta E &= Q \\
+\frac{1}{2}mv_0^2 - \frac{1}{2}(m+M)v_f^2 &= Q \\
+Q &= \frac{1}{2}mv_0^2 - \frac{1}{2}\frac{m^2}{M+m}v_0^2 \\
+&= \frac{1}{2}mv_0^2\left(1-\frac{m}{m+M}\right) \\
+&= \frac{1}{2}mv_0^2\frac{M}{m+M}
+\end{align*}
+This heat is related to the rise in temperature of the bullet via $Q = mc\Delta T$, so
+\begin{align*}
+\Delta T &= \frac{v_0^2}{2c}\frac{M}{m+M} \\
+&= \frac{(200 ms^{-1})^2}{2(130 J kg^{-1}C^{-1})}\frac{(2 kg)}{(2\times10^{-3} + 2 kg)} \\
+&\approx 150 C^o
+\end{align*}
+
+\subsection{Thinking Through Every Effect}
+
+No, the final temperature will not be the same as some fo the heat will be used to change the potential energy as the balls expand. Assume both balls have initial radius $R$ and volume thermal expansion coefficient $\beta$, with mass $m$ and specific heat $c$. Then,
+\begin{align*}
+\Delta V &= \frac{4}{3}(R + \Delta R)^3 - \frac{4}{3}\pi R^3 \\
+&= \beta \frac{4}{3} \pi R^3 \Delta T
+\end{align*}
+For small expansions, $\Delta R \ll R$, and we get
+\begin{align*}
+\frac{4}{3}\pi R^3\left(1+\frac{\Delta R}{R}\right)^3 &= \frac{4}{3}\pi R^3(1+\beta \Delta T) \\
+1+\frac{3\Delta R}{R} &= 1 + \beta \Delta T \\
+\Delta R &= \frac{R}{3}\beta \Delta T
+\end{align*}
+For both balls, the change in energy wil be $Q$, the amount of heat provided. We will look at each separately, using the first law of thermodynamics, $\Delta E = Q - W$ (with $Q = mc\Delta T$ here, not the heat provided). So we analyze each ball separately:
+\begin{itemize}
+	\item[(Ball on the ground)] For this ball,
+	\begin{align*}
+	Q &= mc\Delta T + mg\Delta R \\
+	&= mc\Delta T + mg\frac{R}{3}\beta\Delta T \\
+	\Delta T &= \frac{Q}{m(c+gR\beta /3)}
+	\end{align*}
+	\item[(Ball on the string)] For this ball,
+	\begin{align*}
+	Q &= mc\Delta T - mg\Delta R \\
+	&= mc\Delta T - mg\frac{R}{3}\beta\Delta T \\
+	\Delta T &= \frac{Q}{m(c-gR\beta /3)}
+	\end{align*}
+\end{itemize}
+Hence, the temperature difference will be given by
+\begin{equation}
+\Delta T_{string} - \Delta T_{ground} = \frac{Q}{m}\left[(c-gR\beta /3)^{-1} + (c + gR\beta /3)^{-1}\right]
+\end{equation}
+For small expansions, $\beta\ll 1$, so approximating again,
+\begin{align*}
+\Delta T_{string} - \Delta T_{ground} &= \frac{Q}{mc}\left[(1-gR\beta /3c)^{-1} - (1+gR\beta /3c)^{-1}\right] \\
+&\approx \frac{Q}{mc}\frac{2gR\beta}{3c} \\
+&= \frac{2QgR\beta}{3mc^2}
+\end{align*}
+
+\subsection{Fun with Van der Waals (isothermal)}
+
+Solving for $P(V)$,
+\begin{equation}
+P = \frac{RTn}{V-bn} - \frac{an^2}{V^2}
+\end{equation}
+Now the work done in an isothermal expansion is
+\begin{align*}
+W &= \int_{V_1}^{V_2} PdV \\
+&= \int_{V_1}^{V_2}\left(\frac{RTn}{V-bn} - \frac{an^2}{V^2}\right)dV \\
+&= RTn ln(V-bn) + \frac{an^2}{V}|_{V_1}^{V_2} \\
+&= nRT ln\left(\frac{V_2-bn}{V_1-bn}\right) + an^2\left(\frac{1}{V_2}-\frac{1}{V_1}\right)
+\end{align*}
+
+\subsection{Fun with Pistons (adiabatic)}
+
+\begin{itemize}
+	\item[(a)] From the Ideal Gas Law and kinetic theory,
+	\begin{align*}
+	PV &= nRT \\
+	E = U &= \frac{3}{2}nRT
+	\end{align*}
+	Hence,
+	\begin{align*}
+	PV &= \frac{2}{3}\left(\frac{3}{2}nRT\right) \\
+	&= \left(\frac{5}{3}-1\right)\frac{3}{2}nRT \\
+	&= (\gamma - 1)U
+	\end{align*}
+	\item[(b)] Differentiating, we get
+	\begin{equation}
+	\frac{dP}{dV} V + P = (\gamma - 1)\frac{dU}{dV}
+	\end{equation}
+	\item[(c)] Mutiplying through by $dV$ and using the first law of thermodynamics ($dU = -PdV$), we have
+	\begin{align*}
+	VdP + PdV &= (\gamma - 1)dU \\
+	&= (\gamma - 1)(-PdV) \\
+	VdP + \gamma P dV &= 0 \\
+	\frac{dP}{P} + \gamma\frac{dV}{V} &= 0 \\
+	ln(P) + \gamma ln(V) &= C
+	\end{align*}
+	where $C$ is a constant of integration. Then,
+	\begin{align*}
+	ln(P) + ln\left(V^{\gamma}\right) &= C \\
+	ln\left(PV^{\gamma}\right) &= C \\
+	PV^{\gamma} &= e^C \\
+	&= K
+	\end{align*}
+	where $K$ is a constant. Hence, $PV^{\gamma}=K$, a constant.
+\end{itemize}
+
+\subsection{Fun with Cycles (isobaric/isovolumetric)}
+
+Let $P_1 = 2.2 atm$, $P_2 = 1.4 atm$, $V_1 = 5.9 L$, and $V_2 = 9.3 L$.
+\begin{itemize}
+	\item[(a)] $W = 0$ as the pressure drops since $dV = 0$. On the other hand, $W = \int_{V_1}^{V_2}PdV = P_2 (V_2 - V_1)$ as the volume increases. Plugging in numbers, $W\approx 750 J$.
+	\item[(b)] $\Delta E_{int} = 0 J$ since the gas begins and ends with the same temperature.
+	\item[(c)] Since $\Delta E_{int} = Q - W$ by the first law of thermodynamics, $Q = W$ using the result of part (b). Therefore from part (a), $Q\approx 750 J$.
+\end{itemize}
+
+\end{document}

@@ -155,7 +155,12 @@ class constructpages(object):
 			ftemp = templates.weektemplate(a['week'],a['days'],a['time'])
 
 	def RunIndex(self):
-		indtemp = templates.indextemplate(self.topics,self.weeks,self.times)
+		tempvar = [(self.weeks[i],self.times[i]) for i in range(len(self.weeks)\
+			)]
+		tempvar.sort()
+		sorted_weeks = [x[0] for x in tempvar][::-1]
+		sorted_times = [x[1] for x in tempvar][::-1]
+		indtemp = templates.indextemplate(self.topics,sorted_weeks,sorted_times)
 
 
 if __name__ == '__main__':

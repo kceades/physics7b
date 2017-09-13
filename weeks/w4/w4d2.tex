@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage{array}
+
+\begin{document}
+
+\title{Week 4, Meeting 2 Problems}
+\author{GSI: Caleb Eades}
+\date{9/13}
+\maketitle
+
+\section{Cycle Through the Cycles}
+
+This problem will develop a useful reference: a list of all quantities associated with thermodynamic processes of ideal gases. Suppose that there are $N$ molecules of an ideal gas with $d$ degrees of freedom (use $\gamma = \frac{d+2}{d}$ where it is more convenient). Suppose the gas starts at $(P_0,V_0)$. Then $T_0 = P_0V_0/(Nk)$. Complete the following table and \textit{draw each process on a P-V diagram}.
+
+\def\arraystretch{2.5}
+\begin{table}[h]
+	\begin{center}
+	\caption{This table is also available in the workbook on pg. 153.}
+	
+	\begin{tabular}{| >{\Large}c|c|c|c|c|}
+		\hline
+		\normalsize{\textbf{Quantity}} & \textbf{Isochoric} & \textbf{Isovolumetric} & \textbf{Isothermal} & \textbf{Adiabatic} \\ \hline
+		$P_f$             &                   & $P_f$                  &                     &                    \\ \hline
+		$V_f$             & $V_f$             &                        & $V_f$               &                    \\ \hline
+		$T_f$             &                   &                        &                     & $T_f$              \\ \hline
+		$\Delta E$        &                   &                        &                     &                    \\ \hline
+		$Q$               &                   &                        &                     &                    \\ \hline
+		$W$               &                   &                        &                     &                    \\ \hline
+		$\Delta S$        &                   &                        &                     &                    \\ \hline
+	\end{tabular}
+	\end{center}
+\end{table}
+
+\textit{Source: Physics 7B Workbook pg. 153}
+
+\section{Problems}
+
+\subsection{Heat from the Ocean}
+
+It has been proposed to use the thermal gradient of the ocean to drive a heat engine. Suppose that at a certain location the water temperature is $22^o$C at the ocean surface and $4^o$C at the ocean floor.
+\begin{itemize}
+	\item(a) What is the maximum possible efficiency of an engine operating between these two temperatures?
+	\item(b) If the engine is to produce 1 GW of electrical power, what minimum volume of water must be processed (to suck out the heat) in every second?
+\end{itemize}
+
+\textit{Source: Schroeder - Thermal Physics problem 4.4}
+
+\subsection{Challenge: Adiabatic Atmosphere}
+
+In an adiabatic atmosphere, $P\rho^{-\gamma}$ is a constant. Show that temperature falls off at a constant rate with height above the earth, and find the rate of this decrease.
+
+\textit{Source: some Feynman physics book problem}
+
+\end{document}

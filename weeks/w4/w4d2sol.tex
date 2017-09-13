@@ -1,0 +1,109 @@
+\documentclass{article}
+
+\usepackage{array}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Week 4, Meeting 2 Solutions}
+\author{GSI: Caleb Eades}
+\date{9/13}
+\maketitle
+
+\section{Cycle Through the Cycles}
+
+This problem will develop a useful reference: a list of all quantities associated with thermodynamic processes of ideal gases. Suppose that there are $N$ molecules of an ideal gas with $d$ degrees of freedom (use $\gamma = \frac{d+2}{d}$ where it is more convenient). Suppose the gas starts at $(P_0,V_0)$. Then $T_0 = P_0V_0/(Nk)$. Complete the following table and \textit{draw each process on a P-V diagram}.
+
+\def\arraystretch{2.5}
+\begin{table}[h]
+	\begin{center}
+	\caption{This table is also available in the workbook on pg. 153.}
+	
+	\begin{tabular}{| >{\Large}c|c|c|c|c|}
+		\hline
+		\normalsize{\textbf{Quantity}} & \textbf{Isochoric} & \textbf{Isovolumetric} & \textbf{Isothermal} & \textbf{Adiabatic} \\ \hline
+		$P_f$             & $P_0$             & $P_f$ (given)          & $P_0\frac{V_0}{V_f}$& $P_0\left(\frac{T_f}{T_0}\right)^{\frac{\gamma}{\gamma-1}}$                   \\ \hline
+		$V_f$             & $V_f$ (given)     & $V_0$                  & $V_f$ (given)       & $V_0\left(\frac{T_0}{T_f}\right)^{\frac{1}{\gamma-1}}$                   \\ \hline
+		$T_f$             & $T_0\frac{V_f}{V_0}$& $T_0\frac{P_f}{P_0}$ & $T_0$               & $T_f$ (given)      \\ \hline
+		$\Delta E$        & $\frac{d}{2}Nk_BT_0\left(\frac{V_f}{V_0}-1\right)$ & $\frac{d}{2}Nk_BT_0\left(\frac{P_f}{P_0}-1\right)$                       & $0$ J                 & $\frac{d}{2}Nk_B(T_f-T_0)$                   \\ \hline
+		$Q$               & $Nk_BT_0\left(\frac{V_f}{V_0}-1\right)\left(\frac{d}{2}-1\right)$                  & $\frac{d}{2}Nk_BT_0\left(\frac{P_f}{P_0}-1\right)$                       & $Nk_BT_0ln\left(\frac{V_f}{V_0}\right)$                    & $0$                   \\ \hline
+		$W$               & $P_0(V_f-V_0)$                  & $0$ J                      & $Nk_BT_0ln\left(\frac{V_f}{V_0}\right)$                    & $-\frac{d}{2}Nk_B(T_f-T_0)$                   \\ \hline
+		$\Delta S$        &                   &                        & $Nk_Bln\left(\frac{V_f}{V_0}\right)$                    & $0$                    \\ \hline
+	\end{tabular}
+	\end{center}
+\end{table}
+
+\newpage
+
+\section{Problems}
+
+\subsection{Heat from the Ocean}
+
+\begin{itemize}
+	\item[(a)] Maximum efficiency is through Carnot's theroem combined with the efficiency of a Carnot cycle to get
+	\begin{equation}
+	e = 1-\frac{T_L}{T_H}
+	\end{equation}
+	So in this case evaluating yields
+	\begin{align*}
+	e &= 1-(273.15+4 K)/(273.15+22 K) \\
+	&\approx 0.061
+	\end{align*}
+	Thus, the maximum theoretical efficiency would be about $6.1\%$.
+	\item[(b)] The efficiency can also be written as
+	\begin{equation}
+	e = \frac{W}{Q_H}
+	\end{equation}
+	Producing GW of power means $1$ GJ of work is being done every second since $[W] = \frac{[J]}{[s]}$. Inverting the above equation, $Q_H = \frac{W}{e}$, so the heat per second is $\frac{dQ_H}{dt} = \frac{P}{e}$. The heat input is related to the volume by
+	\begin{align*}
+	Q &= mc\Delta T \\
+	&= \rho cV\Delta T \\
+	V &= \frac{Q}{\rho c\Delta T} \\
+	\frac{dV}{dt} &= \frac{P}{e\rho c\Delta T}
+	\end{align*}
+	Plugging in numbers, the volume processed in one second is
+	\begin{align*}
+	\frac{Volume Processed}{1 s} &= \frac{1\times10^9 J/s}{(0.061)(1000 kg/m^3)(480 J/kg*K)(22-4 K)} \\
+	&\approx 218 m^3 \\
+	&= 2.18\times 10^5 L
+	\end{align*}
+\end{itemize}
+
+\subsection{Challenge: Adiabatic Atmosphere}
+
+From the Ideal Gas Law, $PV = nRT = NkT$. Notice that $\rho = \frac{Nm}{V}$, so
+\begin{equation}
+P = \rho\frac{kT}{m}
+\label{Ideal Equation}
+\end{equation}
+Differentiating the given equation of $P\rho^{-\gamma} = constant$, we have
+\begin{align*}
+\frac{dP}{dh}\rho^{-\gamma} - \gamma\rho^{-\gamma-1}\frac{d\rho}{dh}P &= 0 \\
+\frac{dP}{dh} - \gamma\rho^{-1}\frac{d\rho}{dh}P &= 0 \\
+\frac{d\rho}{dh} &= \frac{\rho}{P}\frac{1}{\gamma}\frac{dP}{dh}
+\end{align*}
+From Eq.~\ref{Ideal Equation}, $\frac{\rho}{P} = \frac{m}{kT}$, so
+\begin{equation}
+\frac{d\rho}{dh} = \frac{m}{kT}\frac{1}{\gamma}\frac{dP}{dh}
+\label{dRho}
+\end{equation}
+Now, differentiating Eq.~\ref{Ideal Equation},
+\begin{equation}
+\frac{dP}{dh} = \frac{kT}{m}\frac{d\rho}{dh} + \frac{\rho k}{m}\frac{dT}{dh}
+\end{equation}
+Plutting into Eq.~\ref{dRho}, we have
+\begin{align*}
+\frac{dP}{dh} &= \frac{kT}{m}\left(\frac{m}{kT}\frac{1}{\gamma}\frac{dP}{dh}\right) + \frac{\rho k}{m}\frac{dT}{dh} \\
+\frac{\rho k}{m}\frac{dT}{dh} &= \frac{dP}{dh}\left(1-\frac{1}{\gamma}\right)
+\end{align*}
+Now, for any substance, the hydrodynamic condition posits that $\frac{dP}{dh} = -\rho g$ (e.g., think of pressure in a lake). Plugging this into the above equation,
+\begin{align*}
+\frac{dT}{dh} &= \frac{m}{\rho k}\left(-\rho g\right)\left(\frac{\gamma-1}{\gamma}\right) \\
+&= -\frac{mg}{k}\frac{\gamma-1}{\gamma}
+\end{align*}
+If we assume the atmosphere is monoatomic, $\gamma = \frac{5}{3}$, so $\frac{\gamma-1}{\gamma} = \frac{2}{5}$ and we have
+\begin{equation}
+\frac{dT}{dh} = -2mg/5k
+\end{equation}
+
+\end{document}

@@ -1,0 +1,63 @@
+\documentclass{article}
+
+\usepackage{array}
+
+\begin{document}
+
+\title{Cycles Problems}
+\author{GSI: Caleb Eades}
+\date{9/18}
+\maketitle
+
+\section{Looking Forward to Spring(s)?}
+
+\subsection{Springs and Expansions}
+
+Suppose $N$ molecules of a monoatomic ideal gas at ($P_1, T_1$) are held inside a container by a piston with cross-sectional area $A$.  The motion of the piston is resisted by a spring with spring constant $k$. The spring exerts no force in the initial state. The helium is then heated until $T_2 = 3 T_1$. Express your answers in terms of the variables given in the problem and fundamental constants. Do not neglect atmospheric pressure --- $P_1 \neq 0$!. Determine:
+\begin{itemize}
+	\item[(a)] the final volume of the system.
+	\item[(b)] the total work done by the gas.
+	\item[(c)] how much heat was added to the gas.
+	\item[(d)] Some answers are \textit{very messy}. It is a good strategy in cases like this to define your own new variables and use those to keep everything looking nicer. Which \textit{one} new variable should you chose to make your final answers look nice? Write them out in terms of this new variable.
+\end{itemize}
+
+\textit{Source: Former GSI Lenny Evans.}
+
+\section{Test-like and other Interesting Problems}
+
+\subsection{Interlude on Entropy}
+
+Suppose a $10$ kg piece of iron ($c=450$ J/kg*K) at initial temperature $1000$ K is placed in a $100$ kg water bath initially at temperature $300$ K.
+\begin{itemize}
+	\item[(a)] Estimate the change in entropy for the iron, water, and system.
+	\item[(b)] Now actually calculate it. Compare your answer to part (a).
+\end{itemize}
+
+\subsection{Derivations}
+
+Derive the efficiency of:
+\begin{itemize}
+	\item[(a)] a Carnot cycle. This consists of an isothermal expansion, adiabatic expansion, isothermal compression, and adiabatic compression. (See Figure 20-7 on pg. 533 of the text, but try not to just copy their derivation. After all, this is for you, as a frequently seen test problem.)
+	\item[(b)] an Otto cycle. This approximates a car engine and consists of an adiabatic compression, isovolumetric heat increase, adiabatic expansion, and isovolumetric heat loss. (See Figure 20-8 on pg. 535 as well as the accompanying explanation.)
+\end{itemize}
+
+\subsection{Net Efficiency of Two Engines}
+
+Consider two heat engines, Engine A and Engine B, with efficiencies $e_A$ and $e_B$. We will create a composite engine, Engine C, by letting the heat output from Engine A be the heat input Engine B, as shown schematically on pg. 30 of the workbook.
+
+\begin{itemize}
+	\item[(a)] If a heat $Q_{in,A}$ is fed into Engine A, what is the net work output and the total heat output from Engine A, $W_A$ and $Q_{out,A}$ in terms of $Q_{in,A}$ and $e_A$?
+	\item[(b)] If the heat input for Engine B is equal to the heat output of Engine A ($Q_{out,A}=Q_{in,B}$), what is the net work output and the total heat output from Engine B, $W_B$ and $Q_{out,B}$ in terms of $Q_{in,A}$ and $e_A$?
+	\item[(c)] What is the total work that is output from both engines as a result of feeding the engines the heat $Q_{in,A}$?
+	\item[(d)] What is the net efficiency, $e_C$, of the combined engine system?
+	\item[(e)] Show that if both $e_A<1$ and $e_B<1$, then $e_C<1$.
+	\item[(f)] Suppose Engine A is a Carnot engine operating between temperatures $T_H$ and $T_M$ and Engine B is a Carnot engine operating between temperatures $T_M$ and $T_C$ ($T_H>T_M>T_C$). Show that the net efficiency, $e_C$, is just the efficiency of a Carnot engine operating between temperatures $T_H$ and $T_C$.
+\end{itemize}
+
+\textit{Source: Workbook pg. 30}
+
+\subsection{Preparing for the Test?}
+
+Just for a note, there are quite a few decent problems in the workbook, specifically between pgs. 19-43 for cycles, processes on gases, entropy, etc. Taking a look at these might be useful in preparing for the exam.
+
+\end{document}

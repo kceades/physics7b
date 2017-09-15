@@ -1,0 +1,236 @@
+\documentclass{article}
+
+\usepackage{array}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Cycles Solutions}
+\author{GSI: Caleb Eades}
+\date{9/18}
+\maketitle
+
+\section{Looking Forward to Spring(s)?}
+
+\subsection{Springs and Expansions}
+
+Initially, $(P_1 - P_0)A = 0 N$, so $P_1 = P_0$ and via the Ideal Gas Law, $P_1V_1 = nRT_1$.
+\begin{itemize}
+	\item[(a)] As $T$ increases, $P$ and $V$ will as well, so the spring will start resisting:
+	\begin{align*}
+	(P_2-P_0)A &= k(V_2-V_1)/A \\
+	P_2V_2 &= nRT_2 = 3nRT_1 = 3P_1V_1
+	\end{align*}
+	Hence $P_2 = 3P_1V_1/V_2$ and
+	\begin{align*}
+	V_2-V_1 &= \frac{A^2}{k}\left(\frac{3P_1V_1}{V_2}-P_1\right) \\
+	0 &= V_2^2+V_2\left(\frac{A^2P_1}{k}-V_1\right) - \frac{3A^2P_1V_1}{k} \\
+	V_2 &= \frac{1}{2}\left(V_1-\frac{A^2P_1}{k}\pm \sqrt{\left(\frac{A^2P_1}{k}\right)^2-2\left(\frac{A^2P_1}{k}\right)(V_1) + V_1^2 + 12\frac{A^2P_1V_1}{k}}\right) \\
+	&= \frac{1}{2}\left(V_1-\frac{A^2P_1}{k}\pm \sqrt{\left(\frac{A^2P_1}{k}\right)^2+10\left(\frac{A^2P_1}{k}\right)(V_1) + V_1^2}\right)
+	\end{align*}
+	Since the radical will be bigger than $\frac{A^2P_1}{k}$, we choose the addition such that
+	\begin{equation}
+	V_2 = \frac{1}{2}\left(V_1-\frac{A^2P_1}{k} + \sqrt{\left(\frac{A^2P_1}{k}\right)^2+10\left(\frac{A^2P_1}{k}\right)(V_1) + V_1^2}\right)
+	\end{equation}
+	\item[(b)] Whatever work the gas did is the negative of what the spring did, which is $-k\frac{\Delta h^2}{2}$, so
+	\begin{align*}
+	W_{gas} &= \frac{k}{2}\left(\frac{V_2}{A}-\frac{V_1}{A}\right)^2 \\
+	&= \frac{k}{2A^2}\left(V_2-V_1\right)^2 \\
+	&= \frac{k}{8A^2}\left(\left(\frac{A^2P_1}{k}\right)^2-2\frac{A^2P_1}{k}\sqrt{\left(\frac{A^2P_1}{k}\right)^2+10\frac{A^2P_1V_1}{k}+V_1^2}+\left(\frac{A^2P_1}{k}\right)^2+10\frac{A^2P_1V_1}{k} + V_1^2\right)
+	\end{align*}
+	\item[(c)] From the first law,
+	\begin{align*}
+	Q &= \Delta E_{int} + W_{gas} \\
+	&= 3nRT_1 \\
+	&+ \frac{k}{8A^2}\left(\left(\frac{A^2P_1}{k}\right)^2-2\frac{A^2P_1}{k}\sqrt{\left(\frac{A^2P_1}{k}\right)^2+10\frac{A^2P_1V_1}{k}+V_1^2}+\left(\frac{A^2P_1}{k}\right)^2+10\frac{A^2P_1V_1}{k} + V_1^2\right)
+	\end{align*}
+	\item[(d)] Let's define a new variable $V'$ as
+	\begin{equation}
+	V' = \frac{1}{2}\left(V_1 - \frac{A^2P_1}{k} + \sqrt{\left(\frac{A^2P_1}{k}\right)^2 + 10\frac{A^2P_1V_1}{k} + V_1^2}\right)
+	\end{equation}
+	Then the answers for each of the previous parts are much simplified. (a) $V_2 = V'$. (b) $W_{gas} = \frac{k}{2A^2}\left(V'-V_1\right)^2$. (c) $Q = 3nRT_1 + \frac{k}{2A^2}\left(V'-V_1\right)^2$.
+\end{itemize}
+
+\section{Test-like and other Interesting Problems}
+
+\subsection{Interlude on Entropy}
+
+\begin{itemize}
+	\item[(a)] For an estimate, we follow the textbook's approach of calculating $T_f$, $Q_{iron}$ and $Q_{water}$, and finding entropies from the average temperature over the process:
+	\begin{align*}
+	Q_{iron} &= m_{iron}c_{iron}\Delta T_{iron} \\
+	&= (10 kg)(450 J kg^{-1}K^{-1})(T_f-1000 K) \\
+	Q_{water} &= (100 kg)(4186 J kg^{-1}K^{-1})(T_f-300 K)
+	\end{align*}
+	Setting $Q_{water} = - Q_{iron}$ since all the heat lost by one must be gained by the other, we have
+	\begin{align*}
+	4500(1000 - T_f) &= 418600(T_f-300) \\
+	T_f &= \frac{4500000 + 418600*300}{418600 + 4500} \\
+	&\approx 307.4 K
+	\end{align*}
+	Then,
+	\begin{align*}
+	Q_{iron} &\approx -3.1\times10^6 J \\
+	Q_{water} &\approx 3.1\times10^6 J
+	\end{align*}
+	Hence,
+	\begin{align*}
+	\Delta S_{iron} &\approx \frac{Q_{iron}}{T_{iron,avg}} \\
+	&= \frac{Q_{iron}}{(1000+T_f)/2} \\
+	&\approx -4.7\times10^3 J K^{-1}
+	\Delta S_{water} &\approx \frac{Q_{water}}{T_{water,avg}} \\
+	&= \frac{Q_{water}}{(300+T_f)/2} \\
+	&\approx 1.0\times10^4 J K^{-1}
+	\end{align*}
+	So $\Delta S_{system} \approx 5.3\times10^3 J K^{-1}$.
+	\item[(b)] $T_f$ is the same as calculated in part (a), as is $Q_{iron}$ and $Q_{water}$. But now,
+	\begin{align*}
+	\Delta S_{iron} &= \int_{1000 K}^{307.4 K}\frac{(4500 JK^{-1})}{T}dT \\
+	&= (-4500 JK^{-1})ln\left(\frac{1000}{307.4}\right) \\
+	&\approx -5.3\times10^3 JK^{-1}
+	\end{align*}
+	Similarly,
+	\begin{align*}
+	\Delta S_{water} = (418600 JK^{-1})ln\left(\frac{307.4}{300}\right) \approx 1.0\times10^4 JK^{-1}
+	\end{align*}
+	So $\Delta S_{system} \approx 4.7\times10^3 JK^{-1}$. This is less that part (a) because first-order log approximations are less accurate when there is a significant difference in the numberator and denominator.
+\end{itemize}
+
+\subsection{Derivations}
+
+\begin{itemize}
+	\item[(a)] Let the top isotherm be at temperature $T_H$ and the lower one at $T_C$. We will look at each segment in the cycle.
+	
+	A to B: $\Delta E_{int,A->B} = 0$, so
+	\begin{align*}
+	Q_H &= Q_{A->B} = W_{A->B} \\
+	&= \int_{V_A}^{V_B}\frac{nRT_H}{V}dV \\
+	&= nRT_Hln\left(\frac{V_B}{V_A}\right)
+	\end{align*}
+	
+	B to C: $Q_{B->C} = 0$ and $\Delta E_{int,B->C} = \frac{3}{2}nR(T_C-T_H)$. By the first law,
+	\begin{align*}
+	W_{B->C} &= -\Delta E{int,B->C} \\
+	&= \frac{3}{2}nR(T_H-T_C)
+	\end{align*}
+	
+	C to D: $\Delta E_{int,C->D} = 0$, so $Q_C = |Q_{C->D}|$ and
+	\begin{align*}
+	Q_{C->D} &= W_{C->D} \\
+	&= -nRT_Cln\left(\frac{V_C}{V_D}\right) \\
+	Q_C &= nRT_Cln\left(\frac{V_C}{V_D}\right)
+	\end{align*}
+	
+	D to A: $Q_{D->A} = 0$ and $\Delta E_{int,D->A} = \frac{3}{2}nR(T_H-T_C)$. By the first law,
+	\begin{align*}
+	W_{D->A} &= -\Delta E_{int,D->A} \\
+	&= \frac{3}{2}nR(T_C-T_H)
+	\end{align*}
+	
+	Now, putting all these pieces together and looking at the overall cycle,
+	\begin{equation}
+	W_{net} = nRT_Hln\left(\frac{V_B}{V_A}\right)-nRT_Cln\left(\frac{V_C}{V_D}\right)
+	\end{equation}
+	The efficiency is then given by
+	\begin{align*}
+	e &= \frac{W_{net}}{Q_H} \\
+	&= \frac{nRT_Hln\left(\frac{V_B}{V_A}\right)-nRT_Cln\left(\frac{V_C}{V_D}\right)}{nRT_Hln\left(\frac{V_B}{V_A}\right)} \\
+	&= 1-\frac{T_C}{T_H}ln\left(\frac{V_C}{V_D}\right)ln\left(\frac{V_B}{V_A}\right)
+	\end{align*}
+	Along an adiabat, $PV^{\gamma} = constant$, so $P_BV_B^{\gamma} = P_CV_C^{\gamma}$. Also, from the Ideal Gas Law, $P_BV_B = nRT_H$ while $P_CV_C = nRT_C$, so
+	\begin{align*}
+	nRT_HV_B^{\gamma-1} &= nRT_CV_C^{\gamma-1} \\
+	V_C &= V_B\left(\frac{T_H}{T_C}\right)^{1/(\gamma-1)}
+	\end{align*}
+	Similarly,
+	\begin{equation}
+	V_D = V_A\left(\frac{T_H}{T_C}\right)^{1/(\gamma-1)}
+	\end{equation}
+	Hence,
+	\begin{align*}
+	e &= 1-\frac{T_C}{T_H}ln\left(\frac{V_B}{V_A}\frac{(T_H/T_C)^{1/(\gamma-1)}}{(T_H/T_C)^{1/(\gamma-1)}}\right)/ln\left(\frac{V_B}{V_A}\right) \\
+	&= 1-\frac{T_C}{T_H}ln\left(\frac{V_B}{V_A}\right)/ln\left(\frac{V_B}{V_A}\right) \\
+	&= 1-\frac{T_C}{T_H}
+	\end{align*}
+	\item[(b)] We again look at each segment in the cycle.
+	
+	A to B:
+	\begin{align*}
+	Q_{A->B} &= 0 \\
+	\Delta E_{int,A->B} &= \frac{3}{2}nR(T_B-T_A) \\
+	W_{A->B} &= -\Delta E_{int,A->B} = \frac{3}{2}nR(T_A-T_B)
+	\end{align*}
+	
+	B to C:
+	\begin{align*}
+	\Delta E_{int,B->C} &= \frac{3}{2}nR(T_C-T_B) \\
+	W_{B->C} &= 0 \\
+	Q_{B->C} &= \Delta E_{int,B->C} = \frac{3}{2}nR(T_C-T_B)
+	\end{align*}
+	
+	C to D:
+	\begin{align*}
+	Q_{C->D} &= 0 \\
+	\Delta E_{int,C->D} &= \frac{3}{2}nR(T_D-T_C) \\
+	W_{A->B} &= -\Delta E_{int,C->D} = \frac{3}{2}nR(T_C-T_D)
+	\end{align*}
+	
+	D to A:
+	\begin{align*}
+	\Delta E_{int,D->A} &= \frac{3}{2}nR(T_A-T_D) \\
+	W_{D->A} &= 0 \\
+	Q_{D->A} &= \Delta E_{int,D->A} = \frac{3}{2}nR(T_A-T_D)
+	\end{align*}
+	
+	Overall in the cycle then,
+	\begin{align*}
+	W_{net} &= \frac{3}{2}nR(T_A + T_C - T_B - T_D) \\
+	Q_{H} &= \frac{3}{2}nR(T_A-T_D)
+	\end{align*}
+	Again we resort to the $PV^{\gamma} = constant$ relation for adiabats to get
+	\begin{align*}
+	P_AV_A^{\gamma} &= P_BV_B^{\gamma} \\
+	T_AV_A^{\gamma-1} &= T_BV_B^{\gamma-1} \\
+	T_B &= T_A\left(\frac{V_A}{V_B}\right)^{\gamma-1}
+	\end{align*}
+	Similarly, $T_C = T_D\left(\frac{V_D}{V_C}\right)^{\gamma-1}$. However, we can observe that $V_A = V_D$ and $V_B = V_C$, so
+	\begin{align*}
+	e &= 1-\frac{T_A\left(\frac{V_A}{V_B}\right)^{\gamma-1}-T_D\left(\frac{V_A}{V_B}\right)^{\gamma-1}}{T_A-T_D} \\
+	&= 1-\frac{T_A-T_D}{T_A-T_D}\left(\frac{V_A}{V_B}\right)^{\gamma-1} \\
+	&= 1-\left(\frac{V_A}{V_B}\right)^{\gamma-1}
+	\end{align*}
+\end{itemize}
+
+\subsection{Net Efficiency of Two Engines}
+
+\begin{itemize}
+	\item[(a)] We define efficiency as $e=\frac{W_{net}}{Q_{in}} = 1-\frac{Q_{out}}{Q_{in}}$, so
+	\begin{align*}
+	W_A &= Q_{in,A}e_A \\
+	Q_{out,A} &= Q_{in,A}(1-e_A)
+	\end{align*}
+	\item[(b)]
+	\begin{align*}
+	W_B &= Q_{in,A}(1-e_A)e_B \\
+	Q_{out,B} &= Q_{in,A}(1-e_A)(1-e_B)
+	\end{align*}
+	\item[(c)]
+	\begin{align*}
+	W_{total} &= W_{A} + W_{B} \\
+	&= Q_{in,A}(e_A + e_B - e_Ae_B)
+	\end{align*}
+	\item[(d)]
+	\begin{align*}
+	e_C &= \frac{W_{total}}{Q_{in,A}} \\
+	&= e_A+e_B-e_Ae_B
+	\end{align*}
+	\item[(e)] Observe that $\frac{\partial e_C}{\partial e_A} = 1-e_B$ and $\frac{\partial e_C}{\partial e_B} = 1-e_A$. These have critical points at $e_B = 1$ and $e_A = 1$, respectively. So $e_C$ is maximized when $e_A = e_B = 1$, so $e_C = 1$. Hence, for $e_A<1$ and $e_B<1$, $e_C<1$.
+	\item[(f)] $e_A = 1-\frac{T_M}{T_H}$ and $e_B = 1-\frac{T_C}{T_M}$, so
+	\begin{align*}
+	e_C &= 1-\frac{T_M}{T_H} + 1 - \frac{T_C}{T_M} - \left(1-\frac{T_M}{T_H}\right)\left(1-\frac{T_C}{T_M}\right) \\
+	&= 2-\frac{T_M}{T_H}-\frac{T_C}{T_M} - 1 + \frac{T_M}{T_H} + \frac{T_C}{T_M} - \frac{T_C}{T_H} \\
+	&= 1 - \frac{T_C}{T_H}
+	\end{align*}
+\end{itemize}
+
+\end{document}

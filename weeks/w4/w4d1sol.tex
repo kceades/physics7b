@@ -23,16 +23,16 @@ where $W=\int PdV$. Heat is related to molar specific heats by $Q=nC_V\Delta T$ 
 \end{equation}
 whereas increasing the temperature with constant pressure,
 \begin{equation}
-\Delta E_{int} = nC_P\Delta T + P\Delta V
+\Delta E_{int} = nC_P\Delta T - P\Delta V
 \end{equation}
 Subtracting the first equation from teh second and noting that $\Delta E_{int} = \frac{d}{2}Nk_B\Delta T$ for both processes,
 \begin{equation}
-0 = nC_P\Delta T + P\Delta V - nC_V\Delta T
+0 = nC_P\Delta T - P\Delta V - nC_V\Delta T
 \end{equation}
 Observe from the Ideal Gas Law that $P\Delta V = nR\Delta T$, so putting this in,
 \begin{align*}
-nC_V\Delta T &= nC_P\Delta T + nR\Delta T \\
-C_V &= C_P + R
+nC_V\Delta T &= nC_P\Delta T - nR\Delta T \\
+C_P &= C_V + R
 \end{align*}
 
 \subsection{Equipartition Theorem and Molar Specific Heats}
@@ -76,12 +76,12 @@ This heat is related to the rise in temperature of the bullet via $Q = mc\Delta 
 
 \subsection{Thinking Through Every Effect}
 
-No, the final temperature will not be the same as some fo the heat will be used to change the potential energy as the balls expand. Assume both balls have initial radius $R$ and volume thermal expansion coefficient $\beta$, with mass $m$ and specific heat $c$. Then,
+No, the final temperature will not be the same as some fo the heat will be used to change the potential energy as the balls expand. Assume both balls have initial radius $R$ and volume thermal expansion coefficient $\beta$, with mass $m$ and specific heat $c$. Then, as two different expressions for how the volume changes,
 \begin{align*}
-\Delta V &= \frac{4}{3}(R + \Delta R)^3 - \frac{4}{3}\pi R^3 \\
+\Delta V &= \frac{4}{3}\pi (R + \Delta R)^3 - \frac{4}{3}\pi R^3 \\
 &= \beta \frac{4}{3} \pi R^3 \Delta T
 \end{align*}
-For small expansions, $\Delta R \ll R$, and we get
+For small expansions, $\Delta R \ll R$, so looking just at the final volumes,
 \begin{align*}
 \frac{4}{3}\pi R^3\left(1+\frac{\Delta R}{R}\right)^3 &= \frac{4}{3}\pi R^3(1+\beta \Delta T) \\
 1+\frac{3\Delta R}{R} &= 1 + \beta \Delta T \\

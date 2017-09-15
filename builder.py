@@ -1,3 +1,9 @@
+"""
+Written by Kevin Caleb Eades (kceades)
+Fall 2017
+"""
+
+
 import os
 import templates
 
@@ -123,12 +129,13 @@ class constructpages(object):
 		self.times = []
 
 		self.RunTopicFiles()
+		self.RunArchtopics()
 		self.RunWeekFiles()
 		self.RunIndex()
 
 	def RunTopicFiles(self):
 		"""
-		Goes through all the files and publishes the data
+		Goes through all the topic files and publishes the topic pages
 		"""
 		for file in self.topic_files.files:
 			fdata = topicparser(file)
@@ -137,15 +144,35 @@ class constructpages(object):
 				self.topics[a['archtopic']] = [a['topic']]
 			else:
 				self.topics[a['archtopic']].append(a['topic'])
+
+		# sort the topics dictionary, first by archtopic then by topic
+		keylist = list(self.topics.keys())
+		keylist.sort()
+		new_dict = {}
+		for key in keylist:
+			current_list = self.topics[key]
+			current_list.sort()
+			new_dict[key] = current_list
+		self.topics = new_dict
+
+		# actually create and publish the pages
 		for file in self.topic_files.files:
 			fdata = topicparser(file)
 			a = fdata.datadict
 			ftemp = templates.topictemplate(a['archtopic'],a['topic']\
 				,self.topics[a['archtopic']],a['problems'])
 
+	def RunArchtopics(self):
+		"""
+		Goes through the archtopics and creates master pages for them
+		with all the topics
+		"""
+		for archtopic in self.topics:
+			ftemp = templates.archtemplate(archtopic,self.topics[archtopic])
+
 	def RunWeekFiles(self):
 		"""
-		Goes through all the files and publishes the data
+		Goes through all the week files and publishes the week pages
 		"""
 		for file in self.week_files.files:
 			fdata = weekparser(file)
@@ -155,13 +182,27 @@ class constructpages(object):
 			ftemp = templates.weektemplate(a['week'],a['days'],a['time'])
 
 	def RunIndex(self):
+		"""
+		Creates the index html page
+		"""
+		# sorting the weeks so they appear from most recent to oldest on the
+		# page
 		tempvar = [(self.weeks[i],self.times[i]) for i in range(len(self.weeks)\
 			)]
-		tempvar.sort()
+		short_var = [x for x in tempvar if len(x[0])==6]
+		long_var = [x for x in tempvar if len(x[0])==7]
+		short_var.sort()
+		long_var.sort()
+		tempvar = short_var + long_var
 		sorted_weeks = [x[0] for x in tempvar][::-1]
 		sorted_times = [x[1] for x in tempvar][::-1]
+
+		# actual call to the templates file to make the page
 		indtemp = templates.indextemplate(self.topics,sorted_weeks,sorted_times)
 
 
 if __name__ == '__main__':
+	"""
+	Uses the above classes to autobuild the website when builder.py is run
+	"""
 	x = constructpages()

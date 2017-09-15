@@ -1,5 +1,5 @@
-archtopic:thermodynamics
+archtopic:Thermodynamics
 
 topic:Heat and Work
 
-problems:Heat and Work
+problems:Heat and Work;Cycles

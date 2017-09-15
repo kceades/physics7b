@@ -1,4 +1,118 @@
+"""
+Written by Kevin Caleb Eades (kceades)
+Fall 2017
+"""
+
+
 import os
+
+
+class archtemplate(object):
+	def __init__(self,archtopic,topics):
+		"""
+		Constructor for the archtemplate class
+		"""
+		self.archtopic = archtopic
+		self.topics = topics
+
+		self.root = '/home/kceades/Documents/teaching/physics7b/topics'
+		if not os.path.isdir(self.root):
+			os.makedirs(self.root)
+
+		self.data = ''
+
+		self.PopHead()
+		self.PopHeader()
+		self.PopBody()
+
+		self.PublishData()
+
+	def FlatLower(self,s):
+		"""
+		Makes s lowercase and flattens it by removing spaces
+		"""
+		wordlist = s.lower().split(' ')
+		rstring = ''
+		for word in wordlist:
+			rstring = rstring + word
+		return rstring
+
+	def PopHead(self):
+		"""
+		Populates the data string with the head
+		"""
+		self.data = self.data + \
+		"""
+<!DOCTYPE html>
+
+
+<html lang='en-US'>
+
+<head>
+	<title>""" + self.archtopic + """</title>
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+	<link rel='stylesheet' href='../stylesheets/style.css?'>
+	<link rel='icon' type='icon/ico' href='../images/favicon.ico'>
+</head>
+
+		""".format()
+
+	def PopHeader(self):
+		"""
+		Populates the data string with the first part of the body, the header
+		containing the title in an h1 tag and the description of the page in
+		the first few lines, as well as the link to the home in the picture
+		"""
+		self.data = self.data + \
+		"""
+<body>
+
+<h1>""" + self.archtopic + """</h1>
+
+<a href='../index.html'><img src='../images/home.png'></a>
+
+<p>This page is the parent directory for all the topics webpages about
+anything under """ + self.archtopic.lower() + """. All the subtopics and
+their webpages are linked below.</p>
+
+		""".format()
+
+	def PopBody(self):
+		"""
+		Populates the data string with the body, including the problems and the
+		solutions
+		"""
+		if self.topics!=[]:
+			self.data = self.data + \
+			"""
+<div class='main' style='margin-top:2cm;'>
+			"""
+			for topic in self.topics:
+				self.data = self.data + \
+				"""
+<a href='""" + self.FlatLower(self.archtopic) + '/' + self.FlatLower(topic) + """.html'>""" + topic + """</a>
+				"""
+
+		self.data = self.data + \
+		"""
+</div>
+
+</body>
+
+</html>
+		""".format()
+
+	def PublishData(self):
+		"""
+		Publishes the html file that has been fed to the template
+		"""
+		savename = self.FlatLower(self.archtopic) + '_arch.html'
+		savefile = os.path.join(self.root,savename)
+
+		file = open(savefile,'w')
+		file.write(self.data)
+		file.close()
 
 
 class indextemplate(object):
@@ -45,6 +159,7 @@ class indextemplate(object):
 	<meta charset='UTF-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1'>
 	<link rel='stylesheet' href='stylesheets/style.css?'>
+	<link rel='icon' type='icon/ico' href='images/favicon.ico'>
 </head>
 
 <body>
@@ -88,7 +203,7 @@ class indextemplate(object):
 			for topic in self.topics[archtopic]:
 				self.data = self.data + \
 				"""
-<a href='topics/"""+archtopic+'/'+self.FlatLower(topic)+""".html'>"""+topic+"""</a>
+<a href='topics/"""+self.FlatLower(archtopic)+'/'+self.FlatLower(topic)+""".html'>"""+topic+"""</a>
 				"""
 
 		self.data = self.data + \
@@ -149,6 +264,7 @@ class weektemplate(object):
 	<meta charset='UTF-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1'>
 	<link rel='stylesheet' href='../../stylesheets/style.css?'>
+	<link rel='icon' type='icon/ico' href='../../images/favicon.ico'>
 </head>
 
 		""".format()
@@ -282,6 +398,7 @@ class topictemplate(object):
 	<meta charset='UTF-8'>
 	<meta name='viewport' content='width=device-width,initial-scale=1'>
 	<link rel='stylesheet' href='../../stylesheets/style.css?'>
+	<link rel='icon' type='icon/ico' href='../../images/favicon.ico'>
 </head>
 
 		""".format()
@@ -368,7 +485,7 @@ class topictemplate(object):
 		"""
 		Publishes the html file that has been fed to the template
 		"""
-		savedir = self.root + '/' + self.archtopic
+		savedir = self.root + '/' + self.FlatLower(self.archtopic)
 		if not os.path.isdir(savedir):
 			os.makedirs(savedir)
 		savename = self.FlatLower(self.topic) + '.html'

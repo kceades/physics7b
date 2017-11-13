@@ -1,5 +1,0 @@
-archtopic:Thermodynamics
-
-topic:Gases
-
-problems:Gases;More Ideal Gases

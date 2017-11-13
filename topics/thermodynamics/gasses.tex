@@ -1,0 +1,69 @@
+\documentclass{article}
+
+\begin{document}
+	
+\title{Probability Distributions and Gasses}
+\author{GSI: Caleb Eades}
+\maketitle
+
+\section{Probability Distributions}
+
+\subsection{Statistics on distributions}
+
+Consider the following probability distribution for velocities of atoms in a gas:
+\begin{equation}
+f(v) = C(a-bv^2)
+\end{equation}
+for $-\sqrt{a/b} < v < \sqrt{a/b}$ and
+\begin{equation}
+f(v) = 0
+\end{equation}
+otherwise, where $a$ and $b$ are fixed positive constants and $C$ is an unknown constant.
+\begin{itemize}
+	\item[(a)] Find the value fo $C$ which ensures that all atoms in the gas have some velocity.
+	\item[(b)] Find the average velocity $v_{avg}$ of atoms in this gas.
+	\item[(c)] Find the average value of $v^2$ of atoms in this gas.
+	\item[(d)] What is the number distribution of this gas (a distribution of hte number of atoms with some velocity)?
+\end{itemize}
+
+\subsection{Concrete numbers}
+
+You have 10 gas molecules in a box. At one moment, two have a speed of 10 m/s, four have a speed of 12 m/s, two have a speed of 14 m/s, one has a speed of 15 m/s and one has a speed of 17 m/s. The gas molecules each have a mass $m$.
+\begin{itemize}
+	\item[(a)] Calculate the average speed and the rms speed.
+	\item[(b)] Using its strict definition, what would the ``temperature'' be for this theoretical distribution? Leave your answer in terms of $m$ and $k_B$.
+\end{itemize}
+
+\subsection{Setting up expressions}
+
+At extremely low temperatures, the usual methods of cooling a gas
+do not work. Instead, a form of evaporative cooling is used, and it is
+based on the fact that for a Maxwell speed distribution the $p_N = 10\%$
+of the gas molecules with the highest speed carry $p_E = 28\%$ of the total
+energy of the gas. By removing these atoms and waiting for the gas
+to come back gas to come back to equilibrium, you can cool the gas a
+fixed amount in each evaporation cycle.
+\begin{itemize}
+	\item[(a)] The fastest $p_N = 10\%$ of molecules will correspond to molecules
+with speeds larger than some value α. Write down (but do not
+solve) the equation that you would use to determine $\alpha$.
+
+This is simple to write down, but hard to solve so do not try to
+solve it!
+	\item[(b)] Write down (but do not evaluate) the expression to determine
+what percentage of the energy the molecules with speeds larger
+than $\alpha$ carry. That is, relate the $p_E = 28\%$ above to the Maxwell
+distribution.
+	\item[(c)] Suppose a gas has initial temperature $T_0$. What is the temperature $T_1$ of the gas afer one cycle?
+	\item[(d)] Suppose you wanted to cool the gas to below $T_0/2$. What is the minimum number of cycles it will take?
+\end{itemize}
+
+\subsection{Puddles!}
+
+Why do puddles evaporate, even if the temperature is much colder than the boiling point of water? Why do sealed jars never evaporate?
+
+\subsection{Building intuition}
+
+Plot a typical Maxwell Distribution for some value of $N$ and $T$. What would it look like if you increased the termpature, keeping $N$ constant? What would it look like if you increased the number of molecules, but kept $T$ constant?
+
+\end{document}

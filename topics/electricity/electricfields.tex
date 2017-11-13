@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage{array}
+
+\begin{document}
+
+\title{Electric Fields, Problems}
+\author{GSI: Caleb Eades}
+\date{10/2}
+\maketitle
+
+\section{Finding Electric Fields}
+
+\subsection{Force from a Semi-circle}
+
+A rod with a uniform linear charge density $\lambda$ is bent into a half-circle of radius $R$. A point charge $-q$ is placed at the center of the circle. (The rod and the point charge are each held fixed in place.)
+\begin{itemize}
+	\item[(a)] What is the net charge on the half-circle?
+	\item[(b)] Set up an integral to find the force on the point charge due to the half-circle. Remember that force is a vector!
+	\item[(c)] What direction does the force point? How can you tell without doing any calculations?
+	\item[(d)] Evaluate the integral and find the vector force on the point charge.
+\end{itemize}
+
+(\textit{Source: Modified from Workbook, pg. 47})
+
+\subsection{Rods in a Row}
+
+Two thin rigid rods lie on the $x$-axis. Both rods are uniformly charged. The rods have lengths $L_1$ and $L_2$ and charge per unit length $\lambda_1$ and $\lambda_2$ respectively. The distance between the rods is $L$.
+\begin{itemize}
+	\item[(a)] Show that the force on rod $2$ exerted by rod $1$ is given by
+	\begin{equation}
+	\vec{F}_{1,2} = k \lambda_1 \lambda_2 \ln\left[ \frac{(L_2 + L)(L_1 + L)}{L(L+L_1+L_2)} \right]\hat{x}
+	\end{equation}
+	\item[(b)] Show that when $L \gg L_1$ and $L \gg L_2$, this equation can be written in the form
+	$\vec{F}_{1,2} = k Q_1 Q_2 / L^2\hat{x}$.
+	What are $Q_1$ and $Q_2$?
+\end{itemize}
+
+(\textit{Source: Dan Parker and Vetri Velan})
+
+\subsection{Frequencies and Dipoles}
+
+Find an expression for the oscillation frequency of an electric dipole of moment $\vec{p}$ and moment of inertia $I$ for small amplitudes of oscillaton about its equilibrium position in a uniform electric field $\vec{E} = E \hat{z}$.
+
+(\textit{Source: Halliday and Resnick 22.59})
+
+\subsection{Meet me Halfway?}
+
+Two large parallel copper plates are a distance $D$ apart and have a uniform electric field $\vec{E}$ between them. An electron with mass $m$ is released from the negative plate at the same time that a proton with mass $M$ is released from the positive plate. Neglect the force of the particles on each other and prove that their distance from the positive plate when they mass each other is given by
+\begin{equation}
+x_{meet} = D\frac{m}{m+M}.
+\end{equation}
+Why does this result not depend on the strength of the electric field?
+
+(\textit{Source: Dan Parker and Vetri Velan})
+
+\subsection{Progressive Derivations}
+
+This problem asks you to find the electric field from progressively more complex charge distributions. Indeed, part (c) seems very hard to solve for. [Hint: use the result of part (a) for part (b). Similarly, use the result of part (b) for part (c).]
+\begin{itemize}
+	\item[(a)] Suppose there is a ring of charge of radius $r$ centered at the origin in the xy-plane with linear charge density $\lambda$. Calculate the field at a point $P$ that is at $(x,y,z)=(0,0,d)$.
+	\item[(b)] Suppose there is a disk of radius $R$ centered at the origin in the xy-plane with area charge density $\sigma$. Calculate the field at the same point $P$.
+	\item[(c)] Suppose there is a a cylinder of radius $R$ centered at the origin in the xy-plane with its bottom surface in that plane, extending a height $h$ upwards along its axis, the z-axis. If this cylinder has charge density $\rho$, calculate the field at the same point $P$, assuming $h<d$.
+\end{itemize}
+
+\end{document}

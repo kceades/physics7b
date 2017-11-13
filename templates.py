@@ -417,7 +417,7 @@ class topictemplate(object):
 
 <a href='../../index.html'><img src='../../images/home.png'></a>
 
-<p>This page contains material about """ + self.topic.lower() + """</p>
+<p>This page contains material covering """ + self.topic.lower() + """.</p>
 
 		""".format()
 

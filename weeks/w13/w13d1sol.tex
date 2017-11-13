@@ -1,0 +1,110 @@
+\documentclass{article}
+
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Week 13, Session 1 Solutions}
+\author{GSI: Caleb Eades}
+\date{11/13}
+\maketitle
+
+\section{Finding Magnetic Fields: Ampere's Law and the Biot-Savart Law}
+
+\subsection{Plane of Current}
+
+\begin{itemize}
+\item[(a)] The magnetic field from a wire is given by
+\begin{equation}
+B_{wire} = \frac{\mu_0 I}{2\pi r}
+\end{equation}
+with the direction following the right-hand-rule around the current. So here at a distance $y$ above a thin strip of width $dx$ and thickness $t$, the amount of current carried is $jtdx$ and the distance to the point is given by $r = \sqrt{x^2+y^2}$. The only thing is the direction rotates as we go in either $x$ direction, but the vertical components cancel, leaving us only caring about the x component. So this gives another factor of $y/r$ in the integral. Hence,
+\begin{align*}
+B &= \int_{-\infty}^{\infty}\frac{\mu_0}{2\pi}\frac{y}{x^2+y^2}jtdx \\
+&= \frac{\mu_0 jt}{2\pi}\int_{-\infty}^{\infty}\frac{y}{x^2+y^2}dx
+\end{align*}
+To do this integral, we first factor out the y from the denominator then use the substitution $tan(\theta) = x/y$, $dx = ysec^2(\theta)d\theta$ and $1+(x/y)^2 = sec^2(\theta)$. Hence,
+\begin{align*}
+B &= \frac{\mu_0 jt}{2\pi y}\int_{-\pi/2}^{\pi/2}yd\theta \\
+&= \frac{\mu_0 jt}{2}
+\end{align*}
+Note that since this result is independent of $y$, it justifies our treating all the thickness of our thin strips as the same $r$ from the point.
+\item[(b)] Using Ampere's Law with, say, a square loop of length $l$ on each side, we simply have that
+\begin{align*}
+2lB &= \mu_0 jtl \\
+B &= \frac{\mu_0 jt}{2}
+\end{align*}
+\end{itemize}
+
+\newpage
+
+\subsection{Loops and Wires}
+
+\begin{itemize}
+\item[(1)] Direction is to the right. For magnitude, we need the magnitude of the field for both the wire and the loop. For the wire, it is simply
+\begin{equation}
+B_{wire} = \frac{\mu_0 I_1}{2\pi d}
+\end{equation}
+Meanwhile for the loop, using the Biot-Savart Law, the $I\vec{dl}\times \hat{r}$ bit will always result in a direction with magnitude $Idl$, so the magnetic field from the loop is simply
+\begin{align*}
+B_{loop} &= \frac{\mu_0 I_2}{4\pi}\frac{2\pi R}{R^2} \\
+&= \frac{\mu_0 I_2}{2R}
+\end{align*}
+Setting these equal to each other, we have
+\begin{align*}
+I_1 &= \frac{\mu_0 I_2}{2R}\frac{2\pi d}{\mu_0} \\
+&= \frac{\pi d}{R}I_2
+\end{align*}
+\item[(2)] Is the force between the ring and the wire is repulsive because the bottom half of the loop is repelled while the top half is attracted but the magnitude of the field from the wire is less in the top half than the bottom.
+\end{itemize}
+
+\newpage
+
+\subsection{Bent Wire}
+
+\begin{itemize}
+\item[(a)] The direction of the field is into the page.
+\item[(b)] Each ``half'' of an infinitely long wire sums together to essentially just be one infinitely long wire. And from the Biot-Savart Law, the contribution from the half-circle is given by
+\begin{align*}
+B_{half-circle} &= \frac{\mu_0 I}{4\pi}\frac{\pi d}{d^2} \\
+&= \frac{\mu_0 I}{4d}
+\end{align*}
+So then the overall magnetic field is given by
+\begin{align*}
+B &= \frac{\mu_0 I}{4d} + \frac{\mu_0 I}{2\pi d} \\
+&= \frac{\mu_0 I}{4\pi d}(2+\pi)
+\end{align*}
+\item[(c)] The magnetic field exerts no force on this electron since it's velocity is into the page and the magnetic field direction is also into the page.
+\end{itemize}
+
+\newpage
+
+\subsection{Spinning Charges}
+
+Using the Biot-Savart law, we can parameterize this problem in terms of the angle $\theta$ from the z-axis. The area of a little strip between $\theta$ and $\theta + d\theta$ is given by
+\begin{equation}
+dA = 2\pi R^2sin(\theta)d\theta
+\end{equation}
+In the $\vec{dl}\times\hat{r}$ part, we pick up another factor of $sin(\theta)$. Lastly, the current of our strip is given by $dI = Q\frac{dA}{4\pi R^2}\frac{\omega}{2\pi}$. So overall,
+\begin{align*}
+B &= \int_{0}^{\pi} \frac{\mu_0 Q\omega}{2\pi}\frac{sin(\theta)d\theta}{2}\frac{sin(\theta)}{R^2} \\
+&= \frac{\mu_0 Q\omega}{4\pi R^2}\int_{0}^{\pi} sin^2(\theta)d\theta \\
+&= \frac{\mu_0 Q\omega}{4\pi R^2}\frac{\pi}{2} \\
+&= \frac{\mu_0 Q\omega}{8 R^2}
+\end{align*}
+and the direction is of course is in the positive $\hat{z}$.
+
+\newpage
+
+\subsection{Arc-ed Wire}
+
+The long wire parts here don't contribute anything to the magnetic field since $\vec{dl}$ and $\hat{r}$ are in the same direction. So the only contribution is from the little arc of angle $\theta_0$, so with the Biot-Savart Law, we have
+\begin{align*}
+B &= \frac{\mu_0 I}{4\pi}\frac{\alpha\theta_0}{\alpha^2} \\
+&= \frac{\mu_0 I \theta_0}{4\pi\alpha}
+\end{align*}
+and the direction is out of the page.
+
+\end{document}

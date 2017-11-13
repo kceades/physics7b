@@ -1,0 +1,5 @@
+week:Week 6
+
+days:2
+
+time:9/25-9/29

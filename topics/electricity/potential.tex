@@ -1,0 +1,58 @@
+\documentclass{article}
+
+\usepackage{array}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Electric Potential}
+\author{GSI: Caleb Eades}
+\date{10/9}
+\maketitle
+
+\section{Fields, Potential, and Energy}
+
+\subsection{The Classic Assembly Problem}
+
+Three charges, $+5Q$,$-5Q$, and $+3Q$ are located on the y-axis at $y= +4a$, $y= 0$, and $y=-4a$, respectively. The point $P$ is on the $x$-axis at $x=3a$.
+\begin{itemize}
+	\item[(a)] Draw a picture of the situation.
+	\item[(b)] How much energy did it take to assemble these charges?
+	\item[(c)] What is the electric potential $V$ at point $P$, taking $V= 0$ at infinity?
+	\item[(d)] What are the $x,y$, and $z$ components of the electric field $\mathbf{E}$ at $P$?
+	\item[(e)] A fourth charge of $+Q$ is brought to $P$ from infinity. What are the $x,y$, and $z$ components of the force $\mathbf{F}$ that is exerted on it by the other three charges?
+	\item[(f)] How much work was done (by the external agent) in moving the fourth charge $+Q$ from infinity to $P$? This can be done without integrating anything!
+\end{itemize}
+
+(\textit{Source: MIT 8.02 Course Notes 3.10.9})
+
+\subsection{Ice Cream? I wish..}
+
+Suppose we have a charged surface that looks like an empty ice-cream cone. The height of the cone is $h$ and the radius of the base is also $h$. The surface has a uniform surface charge density $\sigma$. Find the potential at the tip of the cone, taking the zero of potential to be an infinity. Note that \textit{only} the sloped surface of the cone is charged, \textit{not} the base.
+
+(\textit{Source: part of Griffiths Introduction to Electrodynamics 2.26})
+
+\subsection{Impossible!}
+
+One of these is an impossible electrostatic field. Which one?
+\begin{itemize}
+	\item[(a)] $\mathbf{E}=k[xy\hat{\mathbf{x}}+2yz\hat{\mathbf{y}}+3xz\hat{\mathbf{z}}]$;
+	\item[(b)] $\mathbf{E}=k[y^2\hat{\mathbf{x}}+(2xy+z^2)\hat{\mathbf{y}}+2yz\hat{\mathbf{z}}]$;
+\end{itemize}
+For the \textit{possible} one, find the potential, using the \textit{origin} as your reference point. Check your answer by computing $\nabla V$.
+
+(\textit{Source: Griffiths Introduction to Electrodynamics 2.20})
+
+\subsection{Calculating Potential}
+
+Find the potential inside and outside a uniformly charged solid sphere whose radius is $R$ and whose total charge is $q$. Use infinity as your reference point. Compute the gradient of $V$ in each region, and check that it yields the correct field. Sketch $V(r)$.
+
+(\textit{Source: Griffiths Introduction to Electrodynamics 2.21})
+
+\subsection{Challenge: Madelung constants}
+
+Consider an infinite chain of point charges, $\pm q$ (with alternating signs), strung out along the $x$ axis, each a distance $a$ from its nearest neighbors. Find the work per particle required to assemble this system. [\textit{Partial Answer}: $-\alpha q^2/(4\pi\epsilon_0 a)$, for some dimensionless number $\alpha$; your problem is to determine $\alpha$. It is known as the Madelung constant. Calculating the Madelung constant for $2-$ and $3-$dimensional arrays is much more subtle and difficult.]
+
+(\textit{Source: Griffiths Introduction to Electrodynamics 2.33})
+
+\end{document}

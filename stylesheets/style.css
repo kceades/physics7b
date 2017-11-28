@@ -124,6 +124,8 @@ h3 {
 	margin: auto;
 	margin-top: 3cm;
 	font-size: 0;
+	padding-bottom: 0cm;
+	word-wrap: break-word;
 }
 
 .pagecontainer .left {
@@ -133,6 +135,7 @@ h3 {
 	text-align: center;
 	border-radius: 1cm 0 0 1cm;
 	font-size: 16px;
+	padding-bottom: 0.25cm;
 }
 
 .pagecontainer .right {
@@ -142,15 +145,16 @@ h3 {
 	background-color: #ccccff;
 	border-radius: 0 1cm 1cm 0;
 	font-size: 16px;
+	padding-bottom: 0.25cm;
 }
 
 .pagecontainer a {
 	display: inline-block;
 	vertical-align: middle;
 	padding: 0.25cm;
-	width: 60%;
-	margin-left: 20%;
-	margin-right: 20%;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
 	margin-bottom: 0.25cm;
 	color: white;
 	border-radius: 0.25cm;

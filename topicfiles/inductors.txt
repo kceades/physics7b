@@ -1,0 +1,5 @@
+archtopic:Magnetism
+
+topic:Inductors
+
+problems:Inductors
